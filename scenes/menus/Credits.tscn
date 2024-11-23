@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyhoyelprsnv"]
+
+[ext_resource type="Script" path="res://scripts/menus/credits.gd" id="1_a0ets"]
+[ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="2_itj2h"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a0ets")
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -168.0
+offset_top = 8.0
+offset_right = -15.0
+offset_bottom = 76.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_itj2h")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

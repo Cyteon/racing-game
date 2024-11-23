@@ -1,0 +1,53 @@
+name: Godot Export
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install wget zip unzip
+
+      - name: Download Godot 4.3
+        run: |
+          wget -q https://downloads.tuxfamily.org/godotengine/4.3/Godot_v4.3-stable_linux.x86_64.zip
+          unzip Godot_v4.3-stable_linux.x86_64.zip
+          mv Godot_v4.3-stable_linux.x86_64 godot
+          chmod +x godot
+
+      - name: Download Godot 4.3 Export Templates
+        run: |
+          wget -q https://downloads.tuxfamily.org/godotengine/4.3/Godot_v4.3-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates
+          unzip Godot_v4.3-stable_export_templates.tpz -d ~/.local/share/godot/export_templates
+          mv ~/.local/share/godot/export_templates/templates ~/.local/share/godot/export_templates/4.3.stable
+
+      - name: Export Builds
+        run: |
+          mkdir -p build/linux build/win64
+          # Export once before exporting, failing is ok
+          timeout 50 ./godot --headless --import --path . >/dev/null 2>&1 || true
+          ./godot --headless --verbose --export-release "Linux/X11" project.godot "build/linux/release.x86_64"
+          ./godot --headless --verbose --export-release "Windows Desktop" project.godot "build/win64/release.exe"
+      - name: Upload Linux Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_linux
+          path: |
+            build/linux
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_windows
+          path: |
+            build/win64
+       
