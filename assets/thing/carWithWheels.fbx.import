@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://j1813m8mqyx8"
-path="res://.godot/imported/lauda.fbx-bab8a3162946ec4673ec148976cf6a8b.scn"
+path="res://.godot/imported/carWithWheels.fbx-4412d848418c7d310ac0da03f33ad81c.scn"
 
 [deps]
 
-source_file="res://assets/thing/lauda.fbx"
-dest_files=["res://.godot/imported/lauda.fbx-bab8a3162946ec4673ec148976cf6a8b.scn"]
+source_file="res://assets/thing/carWithWheels.fbx"
+dest_files=["res://.godot/imported/carWithWheels.fbx-4412d848418c7d310ac0da03f33ad81c.scn"]
 
 [params]
 
