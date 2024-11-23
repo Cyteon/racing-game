@@ -17,6 +17,10 @@ config/use_custom_user_dir=true
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TrackManager="*res://scripts/singletons/track_manager.gd"
+
 [display]
 
 window/size/viewport_width=1920

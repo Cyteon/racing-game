@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=3 uid="uid://dpi3bfbw0s77p"]
+
+[ext_resource type="Texture2D" uid="uid://bptnwaygmppqf" path="res://assets/world/countryside_sky_dome_2k.hdr" id="1_fjshk"]
+[ext_resource type="Script" path="res://scripts/car.gd" id="1_jpmnf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b24ck"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eydol"]
+points = PackedVector3Array(-50, -0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, -0.5, 50, -50, 0.5, 50, 50, 0.5, -50, 50, -0.5, 50, 50, 0.5, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s4xff"]
+size = Vector3(2, 0.25, 1.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7af7v"]
+points = PackedVector3Array(-1, -0.125, -0.75, -1, 0.125, -0.75, 1, -0.125, -0.75, -1, -0.125, 0.75, -1, 0.125, 0.75, 1, 0.125, -0.75, 1, -0.125, 0.75, 1, 0.125, 0.75)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a32gn"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53eoe"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5vlnf"]
+panorama = ExtResource("1_fjshk")
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_uq54a"]
+sky_material = SubResource("PanoramaSkyMaterial_5vlnf")
+
+[sub_resource type="Environment" id="Environment_dxyxy"]
+background_mode = 2
+sky = SubResource("Sky_uq54a")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+fog_sky_affect = 0.1
+volumetric_fog_density = 0.01
+
+[node name="Basic" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_b24ck")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_eydol")
+
+[node name="Car" type="VehicleBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77103, 0)
+mass = 80.0
+center_of_mass_mode = 1
+script = ExtResource("1_jpmnf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car"]
+mesh = SubResource("BoxMesh_s4xff")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car"]
+shape = SubResource("ConvexPolygonShape3D_7af7v")
+
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.744397, 0, 0.913166)
+use_as_steering = true
+wheel_radius = 0.3
+suspension_stiffness = 200.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car/VehicleWheel3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_a32gn")
+surface_material_override/0 = SubResource("StandardMaterial3D_53eoe")
+
+[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.741642, 0, 0.913478)
+use_as_traction = true
+wheel_radius = 0.3
+suspension_stiffness = 200.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car/VehicleWheel3D2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_a32gn")
+surface_material_override/0 = SubResource("StandardMaterial3D_53eoe")
+
+[node name="VehicleWheel3D3" type="VehicleWheel3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.744633, 0, -0.913)
+use_as_steering = true
+wheel_radius = 0.3
+suspension_stiffness = 200.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car/VehicleWheel3D3"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_a32gn")
+surface_material_override/0 = SubResource("StandardMaterial3D_53eoe")
+
+[node name="VehicleWheel3D4" type="VehicleWheel3D" parent="Car"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.741642, 0, -0.913)
+use_as_traction = true
+wheel_radius = 0.3
+suspension_stiffness = 200.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car/VehicleWheel3D4"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_a32gn")
+surface_material_override/0 = SubResource("StandardMaterial3D_53eoe")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Car"]
+transform = Transform3D(-3.84731e-08, -0.474672, 0.880163, -2.07486e-08, 0.880163, 0.474672, -1, 0, -4.37114e-08, 0, 0, 0)
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="Car/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dxyxy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.683108, 0.730317, 0, -0.730317, 0.683108, 0, 2.83424, 0)
+shadow_enabled = true

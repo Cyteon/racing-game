@@ -1,0 +1,197 @@
+[gd_scene load_steps=5 format=3 uid="uid://di44cowlm865b"]
+
+[ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="1_573jp"]
+[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_thdx3"]
+[ext_resource type="Texture2D" uid="uid://04w3vpcpil6w" path="res://assets/images/track_basic.jpg" id="3_81xxd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnjfd"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thdx3")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 1
+tabs_visible = false
+
+[node name="1" type="Control" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="TabContainer/1"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 788.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 128
+text = "Racing Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/1"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -368.0
+offset_right = 316.0
+grow_vertical = 0
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="PlayButton" type="Button" parent="TabContainer/1/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.27, 0.659333, 1, 1)
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/focus = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnjfd")
+text = "Play"
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="TabContainer/1/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.27, 0.659333, 1, 1)
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/focus = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnjfd")
+text = "Credits"
+alignment = 0
+
+[node name="ExitButton" type="Button" parent="TabContainer/1/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.27, 0.659333, 1, 1)
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/focus = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_fnjfd")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fnjfd")
+text = "Exit"
+alignment = 0
+
+[node name="2" type="Control" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="TabContainer/2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -344.0
+offset_top = 16.0
+offset_right = 348.0
+offset_bottom = 136.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 128
+text = "Select Track"
+
+[node name="BackButton" type="Button" parent="TabContainer/2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 161.0
+offset_bottom = 76.0
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[node name="TracksContainer" type="GridContainer" parent="TabContainer/2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -348.0
+offset_right = 576.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="TemplateTrack" type="Button" parent="TabContainer/2/TracksContainer"]
+custom_minimum_size = Vector2(290, 275)
+layout_mode = 2
+action_mode = 0
+
+[node name="BG" type="ColorRect" parent="TabContainer/2/TracksContainer/TemplateTrack"]
+layout_mode = 2
+offset_right = 290.0
+offset_bottom = 275.0
+color = Color(0.226707, 0.226707, 0.226707, 1)
+
+[node name="VBox" type="VBoxContainer" parent="TabContainer/2/TracksContainer/TemplateTrack/BG"]
+layout_mode = 2
+offset_right = 290.0
+offset_bottom = 272.0
+
+[node name="Image" type="TextureButton" parent="TabContainer/2/TracksContainer/TemplateTrack/BG/VBox"]
+custom_minimum_size = Vector2(290, 180)
+layout_mode = 2
+texture_normal = ExtResource("3_81xxd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Name" type="Label" parent="TabContainer/2/TracksContainer/TemplateTrack/BG/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 48
+text = "Track Name"
+horizontal_alignment = 1
+
+[node name="Diff" type="Label" parent="TabContainer/2/TracksContainer/TemplateTrack/BG/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 32
+text = "Easy"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="TabContainer/1/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="TabContainer/1/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="TabContainer/1/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TabContainer/2/BackButton" to="." method="_on_back_button_pressed"]
