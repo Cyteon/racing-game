@@ -1,8 +1,7 @@
 extends VehicleBody3D
 
-@export var ENGINE_POWER = 300
-@export var MAX_STEER = 0.4
-@export var BRAKE_FORCE = 10
+@export var ENGINE_POWER: int = 300
+@export var MAX_STEER: float = 0.4
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,8 +11,3 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	engine_force = Input.get_axis("backward", "forward") * ENGINE_POWER
 	steering = move_toward(steering, Input.get_axis("right", "left") * MAX_STEER, delta * 10)
-	
-	if Input.is_action_pressed("handbrake"):
-		engine_force = 0
-		brake = BRAKE_FORCE
-	

@@ -1,15 +1,103 @@
-[gd_scene load_steps=21 format=4 uid="uid://dpi3bfbw0s77p"]
+[gd_scene load_steps=25 format=4 uid="uid://dpi3bfbw0s77p"]
 
 [ext_resource type="Texture2D" uid="uid://bptnwaygmppqf" path="res://assets/world/countryside_sky_dome_2k.hdr" id="1_fjshk"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_hn5n8"]
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_jpmnf"]
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="4_7oxmc"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_b24ck"]
-size = Vector3(100, 1, 100)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky3fn"]
+resource_name = "grass"
+albedo_color = Color(0.585568, 0.774056, 0.688203, 1)
+emission_enabled = true
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eydol"]
-points = PackedVector3Array(-50, -0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, -0.5, 50, -50, 0.5, 50, 50, 0.5, -50, 50, -0.5, 50, 50, 0.5, 50)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6pm4"]
+resource_name = "grey"
+albedo_color = Color(0.975468, 0.977247, 0.984322, 1)
+emission_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo8gf"]
+resource_name = "road"
+albedo_color = Color(0.553237, 0.553237, 0.553237, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ug5by"]
+_surfaces = [{
+"aabb": AABB(0, 0, -2, 1, 1e-05, 2),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABgAEAAUABQAHAAYA"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("F+sAAP//AAAX6wAAAAAAAP//AAD//wAA//8AAAAAAAAAAAAA//8AAAAAAAAAAAAA5xQAAP//AADnFAAAAAAAAA==")
+}, {
+"aabb": AABB(0.0816526, 0, -2, 0.836695, 0.02, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIAAQAAAAQABAAFAAEABwAGAAIAAgADAAcACgAIAAkACQALAAoADAAIAAoACgANAAwADwAOAAwADAANAA8A"),
+"name": "grey",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("mOn/////AACY6f//AAAAAP///////wAA/////wAAAACY6f9///8AAJjp/38AAAAA//8AAP//AAD//wAAAAAAAAAA/////wAAAAAAAP//AAAAAP//AAAAAAAAAAAAAAAAZhb/////AABmFv//AAAAAGYW/3///wAAZhb/fwAAAAA=")
+}, {
+"aabb": AABB(0.154865, 0.01, -2, 0.69027, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIA"),
+"name": "road",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAAAAAAAAAP//AAD//wAA//8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fqaix"]
+resource_name = "roadStraightLong_Mesh roadStraightLong"
+_surfaces = [{
+"aabb": AABB(0, 0, -2, 1, 1e-05, 2),
+"attribute_data": PackedByteArray("i/WlgYv1AAD//6WB//8AAP9/pYH/fwAAc4qlgXOKAAA="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABgAEAAUABQAHAAYA"),
+"material": SubResource("StandardMaterial3D_ky3fn"),
+"name": "grass",
+"primitive": 3,
+"uv_scale": Vector4(78.7402, 155.48, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("F+sAAP///78X6wAAAAD/v///AAD///+///8AAAAA/78AAAAA////vwAAAAAAAP+/5xQAAP///7/nFAAAAAD/v////3////9/////f////3////9/////f////3////9/")
+}, {
+"aabb": AABB(0.0816526, 0, -2, 0.836695, 0.02, 2),
+"attribute_data": PackedByteArray("FbalgRW2AADFuqWBxboAAP9/WYD/f/+AAABZgAAA/4D/f6WB/39ZgP//pYH//1mA/39ZgP9/pYEAAFmAAAClgTmFpYE5hQAA6ImlgeiJAAD/f/+A/39ZgP///4D//1mA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABgAEAAUABQAHAAYACgAIAAkACQALAAoADgAMAA0ADQAPAA4AEgAQABEAEQATABIAFgAUABUAFQAXABYA"),
+"material": SubResource("StandardMaterial3D_h6pm4"),
+"name": "grey",
+"primitive": 3,
+"uv_scale": Vector4(157.48, 155.48, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("mOn//////7+Y6f//AAD/v/////////+//////wAA/7+Y6f//////v5jp/3////+/mOn//wAA/7+Y6f9/AAD/v///AAD///+//////////7///wAAAAD/v/////8AAP+/AAD//////78AAAAA////vwAA//8AAP+/AAAAAAAA/78AAP//////vwAA//8AAP+/Zhb//////79mFv//AAD/v2YW/3////+/Zhb//////79mFv9/AAD/v2YW//8AAP+/////f////3////9/////f/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/3////9/////f////3///////3////9/////f////3//fwAA/38AAP9/AAD/fwAA")
+}, {
+"aabb": AABB(0.154865, 0.01, -2, 0.69027, 1e-05, 2),
+"attribute_data": PackedByteArray("c5elgXOXAAD//6WB//8AAA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIA"),
+"material": SubResource("StandardMaterial3D_qo8gf"),
+"name": "road",
+"primitive": 3,
+"uv_scale": Vector4(66.5461, 155.48, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/7////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ug5by")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2bxbw"]
+data = PackedVector3Array(1, 0, 0, 0.9183, 0, 0, 0.9183, 0, -2, 0.9183, 0, -2, 1, 0, -2, 1, 0, 0, 0.0817, 0, 0, 0, 0, 0, 0, 0, -2, 0, 0, -2, 0.0817, 0, -2, 0.0817, 0, 0, 0.9183, 0.02, 0, 0.8451, 0.02, 0, 0.8451, 0.02, -2, 0.8451, 0.02, -2, 0.9183, 0.02, -2, 0.9183, 0.02, 0, 0.8451, 0.02, -2, 0.8451, 0.02, 0, 0.8451, 0.01, 0, 0.8451, 0.01, 0, 0.8451, 0.01, -2, 0.8451, 0.02, -2, 0.9183, 0, -2, 0.9183, 0, 0, 0.9183, 0.02, 0, 0.9183, 0.02, 0, 0.9183, 0.02, -2, 0.9183, 0, -2, 0.0817, 0.02, -2, 0.0817, 0.02, 0, 0.0817, 0, 0, 0.0817, 0, 0, 0.0817, 0, -2, 0.0817, 0.02, -2, 0.1549, 0.02, 0, 0.0817, 0.02, 0, 0.0817, 0.02, -2, 0.0817, 0.02, -2, 0.1549, 0.02, -2, 0.1549, 0.02, 0, 0.1549, 0.01, -2, 0.1549, 0.01, 0, 0.1549, 0.02, 0, 0.1549, 0.02, 0, 0.1549, 0.02, -2, 0.1549, 0.01, -2, 0.8451, 0.01, 0, 0.1549, 0.01, 0, 0.1549, 0.01, -2, 0.1549, 0.01, -2, 0.8451, 0.01, -2, 0.8451, 0.01, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svrvq"]
 resource_name = "Material.006"
@@ -228,18 +316,22 @@ volumetric_fog_density = 0.01
 [node name="Basic" type="Node3D"]
 script = ExtResource("1_hn5n8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_b24ck")
+[node name="Track" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="roadStraightLong" type="MeshInstance3D" parent="Track"]
+transform = Transform3D(1.19249e-07, 0, 10, 0, 10, 0, -10, 0, 1.19249e-07, 0, 0, 4.95938)
+mesh = SubResource("ArrayMesh_fqaix")
+skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_eydol")
+[node name="StaticBody3D" type="StaticBody3D" parent="Track/roadStraightLong"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/roadStraightLong/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2bxbw")
 
 [node name="Car" type="VehicleBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77103, 0)
-center_of_mass_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21134, 0.660367, 0)
 script = ExtResource("1_jpmnf")
+MAX_STEER = 0.5
 
 [node name="Car" type="MeshInstance3D" parent="Car"]
 transform = Transform3D(0.135211, 0, 0, 0, 0.135211, 0, 0, 0, 0.135211, -0.0590311, 0.448176, -0.0133219)
@@ -253,8 +345,10 @@ shape = SubResource("ConvexPolygonShape3D_pgr2u")
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="Car"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.25655, -0.0669665, 0.913166)
 use_as_steering = true
+wheel_roll_influence = 0.6
 wheel_radius = 0.33
-suspension_stiffness = 180.0
+wheel_friction_slip = 2.0
+suspension_stiffness = 200.0
 
 [node name="Wheel" type="MeshInstance3D" parent="Car/VehicleWheel3D"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
@@ -262,10 +356,12 @@ mesh = SubResource("ArrayMesh_5n3xg")
 skeleton = NodePath("")
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="Car"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.64785, -0.0347408, 0.913478)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.58744, -0.0919136, 0.913478)
 use_as_traction = true
+wheel_roll_influence = 0.6
 wheel_radius = 0.33
-suspension_stiffness = 180.0
+wheel_friction_slip = 1.8
+suspension_stiffness = 200.0
 
 [node name="Wheel" type="MeshInstance3D" parent="Car/VehicleWheel3D2"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
@@ -275,8 +371,10 @@ skeleton = NodePath("")
 [node name="VehicleWheel3D3" type="VehicleWheel3D" parent="Car"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.25679, -0.0669665, -0.913)
 use_as_steering = true
+wheel_roll_influence = 0.6
 wheel_radius = 0.33
-suspension_stiffness = 180.0
+wheel_friction_slip = 2.0
+suspension_stiffness = 200.0
 
 [node name="Wheel" type="MeshInstance3D" parent="Car/VehicleWheel3D3"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
@@ -284,10 +382,12 @@ mesh = SubResource("ArrayMesh_5n3xg")
 skeleton = NodePath("")
 
 [node name="VehicleWheel3D4" type="VehicleWheel3D" parent="Car"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.64785, -0.0347408, -0.913)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.58744, -0.0919136, -0.913)
 use_as_traction = true
+wheel_roll_influence = 0.6
 wheel_radius = 0.33
-suspension_stiffness = 180.0
+wheel_friction_slip = 1.8
+suspension_stiffness = 200.0
 
 [node name="Wheel" type="MeshInstance3D" parent="Car/VehicleWheel3D4"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
@@ -299,7 +399,6 @@ transform = Transform3D(-4.01342e-08, -0.396203, 0.918163, -1.73186e-08, 0.91816
 spring_length = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="Car/SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 current = true
 
 [node name="car" type="Node3D" parent="Car"]
