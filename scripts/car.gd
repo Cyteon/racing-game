@@ -9,5 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	engine_force = Input.get_axis("backward", "forward") * ENGINE_POWER
+	if get_parent().run_started:
+		engine_force = Input.get_axis("backward", "forward") * ENGINE_POWER
+	
 	steering = move_toward(steering, Input.get_axis("right", "left") * MAX_STEER, delta * 10)

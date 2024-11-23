@@ -2,16 +2,16 @@ extends Node
 
 var tracks = [
 	{
-		"name": "Basic",
-		"id": "basic",
+		"name": "Tutorial",
+		"id": "tutorial",
 		"img": "track_basic.jpg",
-		"difficulty": "easy"
+		"difficulty": "Super Easy"
 	},
 	{
 		"name": "Basic2",
 		"id": "basic2",
 		"img": "tracK_basic.jpg",
-		"difficulty": "easy"
+		"difficulty": "Easy"
 	}
 ]
 

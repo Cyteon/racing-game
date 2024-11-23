@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtl8r5he5ggnr"]
+
+[ext_resource type="Script" path="res://scripts/menus/tutorial.gd" id="1_u3f4w"]
+[ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="2_5ljt2"]
+
+[sub_resource type="Animation" id="Animation_b20vw"]
+resource_name = "tutorial"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Use W/A/S/D, arrows or controller (next text) to control your car", "R2/L2 Forward/Backward, any joy left/right to turn left/right,
+Y to restart (X on nintendo controller)
+ 
+", "After you have played a track once, playing it again will make a 
+ghost apppear, doing what u did in your last record run"]
+}
+
+[sub_resource type="Animation" id="Animation_meiyx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Use W/A/S/D, arrows or controller (next text) to control your car"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gekmw"]
+_data = {
+"RESET": SubResource("Animation_meiyx"),
+"tutorial": SubResource("Animation_b20vw")
+}
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3f4w")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.133196, 0.133196, 0.133196, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5ljt2")
+theme_override_font_sizes/font_size = 64
+text = "Use W/A/S/D, arrows or controller (next text) to control your car"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gekmw")
+}
+autoplay = "tutorial"
+
+[node name="TimerLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 8.0
+offset_right = 65.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5ljt2")
+theme_override_font_sizes/font_size = 96
+text = "3.0"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

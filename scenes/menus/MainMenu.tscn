@@ -54,6 +54,7 @@ alignment = 2
 [node name="PlayButton" type="Button" parent="TabContainer/1/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0.27, 0.659333, 1, 1)
+theme_override_colors/font_focus_color = Color(0.270588, 0.658824, 1, 1)
 theme_override_fonts/font = ExtResource("1_573jp")
 theme_override_font_sizes/font_size = 96
 theme_override_styles/focus = SubResource("StyleBoxTexture_fnjfd")
@@ -108,6 +109,23 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fnjfd")
 text = "Exit"
 alignment = 0
 
+[node name="Label2" type="Label" parent="TabContainer/1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -592.0
+offset_top = -32.0
+offset_right = -7.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 32
+text = "Only game has controller support, menues does not, including death screen"
+
 [node name="2" type="Control" parent="TabContainer"]
 visible = false
 layout_mode = 2
@@ -156,14 +174,17 @@ columns = 4
 
 [node name="TemplateTrack" type="Button" parent="TabContainer/2/TracksContainer"]
 visible = false
-custom_minimum_size = Vector2(290, 275)
+custom_minimum_size = Vector2(288, 300)
 layout_mode = 2
 action_mode = 0
 
 [node name="BG" type="ColorRect" parent="TabContainer/2/TracksContainer/TemplateTrack"]
-layout_mode = 2
-offset_right = 290.0
-offset_bottom = 275.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.226707, 0.226707, 0.226707, 1)
 
 [node name="VBox" type="VBoxContainer" parent="TabContainer/2/TracksContainer/TemplateTrack/BG"]
@@ -190,6 +211,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_573jp")
 theme_override_font_sizes/font_size = 32
 text = "Easy"
+horizontal_alignment = 1
+
+[node name="Record" type="Label" parent="TabContainer/2/TracksContainer/TemplateTrack/BG/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_573jp")
+theme_override_font_sizes/font_size = 32
+text = "Record: 5:10.56"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="TabContainer/1/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
