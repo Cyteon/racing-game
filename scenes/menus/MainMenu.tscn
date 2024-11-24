@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="1_573jp"]
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_thdx3"]
-[ext_resource type="Texture2D" uid="uid://04w3vpcpil6w" path="res://assets/images/track_basic.jpg" id="3_81xxd"]
+[ext_resource type="Texture2D" uid="uid://04w3vpcpil6w" path="res://assets/images/placeholder.jpg" id="3_81xxd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnjfd"]
 

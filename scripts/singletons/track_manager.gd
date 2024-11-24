@@ -4,14 +4,14 @@ var tracks = [
 	{
 		"name": "Tutorial",
 		"id": "tutorial",
-		"img": "track_basic.jpg",
+		"img": "placeholder.jpg",
 		"difficulty": "Super Easy"
 	},
 	{
-		"name": "Basic2",
-		"id": "basic2",
-		"img": "tracK_basic.jpg",
-		"difficulty": "Easy"
+		"name": "Goin Up",
+		"id": "going_up",
+		"img": "placeholder.jpg",
+		"difficulty": "Medium"
 	}
 ]
 
