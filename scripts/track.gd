@@ -46,17 +46,18 @@ func _process(delta: float) -> void:
 	$CanvasLayer/Control/ColorRect/Speed.text = "%s km/h" % str(int($Car.linear_velocity.length() * 2))
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	$CanvasLayer/Control/EndScreen.visible = true
-	run_finished = true
-	
-	if time < record or record == 0:
-		record = time
-		TrackManager.records[TRACK_ID]["positions"] = car_positions
-		TrackManager.records[TRACK_ID]["rotations"] = car_rotations
-		TrackManager.records[TRACK_ID]["record"] = record
-	
-	await get_tree().create_timer(0.5).timeout
-	$Car.freeze = true
+	if body.name == "Car":
+		$CanvasLayer/Control/EndScreen.visible = true
+		run_finished = true
+		
+		if time < record or record == 0:
+			record = time
+			TrackManager.records[TRACK_ID]["positions"] = car_positions
+			TrackManager.records[TRACK_ID]["rotations"] = car_rotations
+			TrackManager.records[TRACK_ID]["record"] = record
+		
+		await get_tree().create_timer(0.5).timeout
+		$Car.freeze = true
 
 func _on_play_again_button_pressed() -> void:
 	get_tree().reload_current_scene()
