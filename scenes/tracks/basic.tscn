@@ -1031,7 +1031,7 @@ mass = 120.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.26, 0)
 script = ExtResource("1_jpmnf")
-ENGINE_POWER = 400
+ENGINE_POWER = 600
 MAX_STEER = 0.6
 
 [node name="Car" type="MeshInstance3D" parent="Car"]
@@ -1208,6 +1208,37 @@ theme_override_fonts/font = ExtResource("4_7oxmc")
 theme_override_font_sizes/font_size = 48
 text = "Record: 1:5.67"
 horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -80.0
+offset_right = 312.0
+offset_bottom = -8.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Speed" type="Label" parent="CanvasLayer/Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -28.0
+offset_right = 152.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_7oxmc")
+theme_override_font_sizes/font_size = 64
+text = "100 km/h"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GhostCar" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0232, -1.19736, 0)
