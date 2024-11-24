@@ -20,6 +20,14 @@ func _process(delta: float) -> void:
 			tween.tween_property($AudioStreamPlayer3D, "volume_db", -10, .5)
 	
 	steering = move_toward(steering, Input.get_axis("right", "left") * MAX_STEER, delta * 10)
+	
+	if steering == 0:
+		var dir = -1 if angular_velocity.y > 0 else 1
+		
+		$VehicleWheel3D/Wheel.rotation.z += dir * delta * -linear_velocity.length() / 2
+		$VehicleWheel3D2/Wheel.rotation.z += dir * delta * -linear_velocity.length() / 2
+		$VehicleWheel3D3/Wheel.rotation.z += dir * delta * -linear_velocity.length() / 2
+		$VehicleWheel3D4/Wheel.rotation.z += dir * delta * -linear_velocity.length() / 2
 
 func _on_audio_stream_player_3d_finished() -> void:
 	$AudioStreamPlayer3D.play()

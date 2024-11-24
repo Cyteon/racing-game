@@ -53,7 +53,6 @@ func _mouse_enter(btn: String) -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(get_node(path), "modulate", Color.LIGHT_SKY_BLUE, .5)
 
-
 func _mouse_exit(btn: String) -> void:
 	var path = "TabContainer/1/VBoxContainer/%s" % btn
 	
