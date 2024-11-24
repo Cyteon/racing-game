@@ -285,4 +285,15 @@ stream = ExtResource("2_5810e")
 volume_db = -20.0
 autoplay = true
 
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.07294, -0.0730889, 0)
+light_energy = 3.0
+spot_range = 10.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.0473662
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SpotLight3D"]
+omni_range = 0.05
+omni_attenuation = 10.0
+
 [connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
