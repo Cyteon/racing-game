@@ -223,7 +223,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.256
 use_as_steering = true
 wheel_roll_influence = 1.0
 wheel_radius = 0.335
-wheel_friction_slip = 3.0
+wheel_friction_slip = 5.0
 suspension_stiffness = 150.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D"]
@@ -236,7 +236,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5874
 use_as_traction = true
 wheel_roll_influence = 1.0
 wheel_radius = 0.335
-wheel_friction_slip = 3.0
+wheel_friction_slip = 4.8
 suspension_stiffness = 150.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D2"]
@@ -249,7 +249,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.256
 use_as_steering = true
 wheel_roll_influence = 1.0
 wheel_radius = 0.335
-wheel_friction_slip = 3.0
+wheel_friction_slip = 5.0
 suspension_stiffness = 150.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D3"]
@@ -262,7 +262,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5874
 use_as_traction = true
 wheel_roll_influence = 1.0
 wheel_radius = 0.335
-wheel_friction_slip = 3.0
+wheel_friction_slip = 4.8
 suspension_stiffness = 150.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D4"]
