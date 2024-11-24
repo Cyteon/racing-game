@@ -2168,7 +2168,6 @@ shape = SubResource("ConcavePolygonShape3D_csbjf")
 environment = SubResource("Environment_hqpmt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
