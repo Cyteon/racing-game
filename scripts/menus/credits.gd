@@ -7,7 +7,7 @@ func _ready() -> void:
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label.add_theme_font_size_override("normal_font_size", 32)
 	
-	label.text = "This project is licensed under the GNU GPL v3\nScroll past the GPL license to see Godot Copyright Information\nDeveloper: Cyteon\n\n"
+	label.text = "This project is licensed under the GNU GPL v3\nScroll past the GPL license to see Godot Copyright Information\nDeveloper: Cyteon\nRepo: https://github.com/Cyteon/racing-game\n\n"
 	
 	var file = FileAccess.open("res://LICENSE", FileAccess.READ)
 	var content = file.get_as_text()
