@@ -3,7 +3,7 @@ extends Control
 @onready var track_container = $"TabContainer/2/TracksContainer"
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:	
+func _ready() -> void:
 	for track in TrackManager.tracks:
 		var card = track_container.get_node("TemplateTrack").duplicate()
 		
@@ -20,10 +20,6 @@ func _ready() -> void:
 		
 		card.visible = true
 		track_container.add_child(card)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_play_button_pressed() -> void:
 	$ClickSound.play()
