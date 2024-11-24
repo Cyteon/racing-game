@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="racing-game"
+config/name="Racing Game"
 config/version="0.0.0-DEV"
 run/main_scene="res://scenes/menus/MainMenu.tscn"
 config/use_custom_user_dir=true
@@ -83,3 +83,9 @@ reset={
 [physics]
 
 3d/physics_engine="JoltPhysics3D"
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/screen_space_aa=1
