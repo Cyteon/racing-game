@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyhoyelprsnv"]
+[gd_scene load_steps=5 format=3 uid="uid://dyhoyelprsnv"]
 
 [ext_resource type="Script" path="res://scripts/menus/credits.gd" id="1_a0ets"]
+[ext_resource type="Texture2D" uid="uid://den4nor8utlqu" path="res://assets/images/gradient.png" id="2_gqj8f"]
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="2_itj2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ugwi0"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -11,6 +14,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a0ets")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gqj8f")
 
 [node name="Button" type="Button" parent="."]
 top_level = true
@@ -25,6 +37,28 @@ offset_bottom = 76.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_itj2h")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ugwi0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ugwi0")
 text = "Back"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -93,6 +93,7 @@ alignment = 0
 
 [node name="CreditsButton" type="Button" parent="TabContainer/1/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.27, 0.659333, 1, 1)
 theme_override_fonts/font = ExtResource("1_573jp")
 theme_override_font_sizes/font_size = 96
 theme_override_styles/focus = SubResource("StyleBoxTexture_fnjfd")
@@ -111,6 +112,7 @@ alignment = 0
 
 [node name="ExitButton" type="Button" parent="TabContainer/1/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.27, 0.659333, 1, 1)
 theme_override_fonts/font = ExtResource("1_573jp")
 theme_override_font_sizes/font_size = 96
 theme_override_styles/focus = SubResource("StyleBoxTexture_fnjfd")
@@ -253,15 +255,8 @@ horizontal_alignment = 1
 stream = ExtResource("4_ypcb4")
 volume_db = 20.0
 
-[connection signal="mouse_entered" from="TabContainer/1/VBoxContainer/PlayButton" to="." method="_mouse_enter" binds= ["PlayButton"]]
-[connection signal="mouse_exited" from="TabContainer/1/VBoxContainer/PlayButton" to="." method="_mouse_exit" binds= ["PlayButton"]]
+[connection signal="mouse_entered" from="TabContainer/1/VBoxContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="TabContainer/1/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="mouse_entered" from="TabContainer/1/VBoxContainer/CreditsButton" to="." method="_mouse_enter" binds= ["CreditsButton"]]
-[connection signal="mouse_exited" from="TabContainer/1/VBoxContainer/CreditsButton" to="." method="_mouse_exit" binds= ["CreditsButton"]]
 [connection signal="pressed" from="TabContainer/1/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="mouse_entered" from="TabContainer/1/VBoxContainer/ExitButton" to="." method="_mouse_enter" binds= ["ExitButton"]]
-[connection signal="mouse_exited" from="TabContainer/1/VBoxContainer/ExitButton" to="." method="_mouse_exit" binds= ["ExitButton"]]
 [connection signal="pressed" from="TabContainer/1/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="mouse_entered" from="TabContainer/2/BackButton" to="." method="_mouse_enter" binds= ["BackButton"]]
-[connection signal="mouse_exited" from="TabContainer/2/BackButton" to="." method="_mouse_exit" binds= ["BackButton"]]
 [connection signal="pressed" from="TabContainer/2/BackButton" to="." method="_on_back_button_pressed"]

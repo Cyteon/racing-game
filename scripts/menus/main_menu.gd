@@ -43,3 +43,23 @@ func _card_pressed(card) -> void:
 		get_tree().change_scene_to_file("res://scenes/menus/Tutorial.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/tracks/%s.tscn" % card["id"])
+
+func _mouse_enter(btn: String) -> void:
+	var path = "TabContainer/1/VBoxContainer/%s" % btn
+	
+	if btn == "BackButton":
+		path = "TabContainer/2/BackButton"
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(get_node(path), "modulate", Color.LIGHT_SKY_BLUE, .5)
+
+
+func _mouse_exit(btn: String) -> void:
+	var path = "TabContainer/1/VBoxContainer/%s" % btn
+	
+	
+	if btn == "BackButton":
+		path = "TabContainer/2/BackButton"
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(get_node(path), "modulate", Color.WHITE, .5)
