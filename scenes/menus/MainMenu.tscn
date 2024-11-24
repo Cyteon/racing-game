@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://di44cowlm865b"]
+[gd_scene load_steps=9 format=3 uid="uid://di44cowlm865b"]
 
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="1_573jp"]
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_thdx3"]
+[ext_resource type="Texture2D" uid="uid://den4nor8utlqu" path="res://assets/images/gradient.png" id="2_drb80"]
 [ext_resource type="Texture2D" uid="uid://04w3vpcpil6w" path="res://assets/images/placeholder.jpg" id="3_81xxd"]
 [ext_resource type="AudioStream" uid="uid://ervx0323apca" path="res://assets/sfx/click.ogg" id="4_ypcb4"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72cmv"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnjfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_li36l"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -16,6 +21,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_thdx3")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_drb80")
+
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -23,6 +37,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_72cmv")
+theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_72cmv")
+theme_override_styles/tabbar_background = SubResource("StyleBoxEmpty_72cmv")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_72cmv")
+theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_72cmv")
+theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_72cmv")
+theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_72cmv")
 current_tab = 0
 tabs_visible = false
 
@@ -148,12 +169,23 @@ text = "Select Track"
 
 [node name="BackButton" type="Button" parent="TabContainer/2"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 161.0
-offset_bottom = 76.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 169.0
+offset_bottom = 84.0
 theme_override_fonts/font = ExtResource("1_573jp")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_li36l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_li36l")
 text = "Back"
 
 [node name="TracksContainer" type="GridContainer" parent="TabContainer/2"]
@@ -175,7 +207,7 @@ columns = 4
 
 [node name="TemplateTrack" type="Button" parent="TabContainer/2/TracksContainer"]
 visible = false
-custom_minimum_size = Vector2(288, 300)
+custom_minimum_size = Vector2(288, 304)
 layout_mode = 2
 action_mode = 0
 
@@ -186,7 +218,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.226707, 0.226707, 0.226707, 1)
+color = Color(0.0941176, 0.0941176, 0.145098, 1)
 
 [node name="VBox" type="VBoxContainer" parent="TabContainer/2/TracksContainer/TemplateTrack/BG"]
 layout_mode = 2
