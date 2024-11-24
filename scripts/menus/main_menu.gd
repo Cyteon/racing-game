@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_play_button_pressed() -> void:
+	$ClickSound.play()
 	$TabContainer.current_tab = 1
 
 
@@ -38,6 +39,7 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_back_button_pressed() -> void:
+	$ClickSound.play()
 	$TabContainer.current_tab = 0
 
 func _card_pressed(card) -> void:
