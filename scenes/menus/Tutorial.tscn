@@ -31,7 +31,8 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3, 6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["Use W/A/S/D, arrows or controller (next text) to control your car", "R2/L2 Forward/Backward, any joy left/right to turn left/right,
+"values": ["Use W/A/S/D, arrows or controller (next text) to control your car
+R to restart, F to flip car", "R2/L2 Forward/Backward, any joy left/right to turn left/right,
 Y to restart (X on nintendo controller)
  
 ", "After you have played a track once, playing it again will make a 
