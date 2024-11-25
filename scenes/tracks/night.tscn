@@ -1,9 +1,9 @@
-[gd_scene load_steps=121 format=4 uid="uid://b6008arpnia0n"]
+[gd_scene load_steps=120 format=4 uid="uid://b6008arpnia0n"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_buevl"]
 [ext_resource type="PackedScene" uid="uid://vs77sivxj54x" path="res://scenes/car.tscn" id="2_3ex8e"]
 [ext_resource type="Texture2D" uid="uid://daijbawfpqdu0" path="res://assets/world/starry_night_sky_dome_2k.hdr" id="3_5xwm8"]
-[ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="4_k1vvf"]
+[ext_resource type="PackedScene" uid="uid://c538ntn2nevhb" path="res://scenes/reusables/TrackCanvas.tscn" id="5_rfmga"]
 [ext_resource type="Texture2D" uid="uid://dmhtwg3qy3qxf" path="res://assets/parts/billboard_tankcoBanner.png" id="5_wff4e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky3fn"]
@@ -687,8 +687,6 @@ ssil_enabled = true
 sdfgi_enabled = true
 fog_sky_affect = 0.1
 volumetric_fog_density = 0.01
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wmtg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_baxsh"]
 resource_name = "Material.006"
@@ -1664,7 +1662,6 @@ emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_547qx"]
 resource_name = "tankco"
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("5_wff4e")
 emission_enabled = true
 texture_filter = 1
@@ -1776,6 +1773,7 @@ shadow_mesh = SubResource("ArrayMesh_gr2g1")
 points = PackedVector3Array(0.9362, 1, 0.04, 0.9362, 0.5, 0.04, 0.9362, 1, -4.071e-05, -0.0638, 1, 0.04, 0.872379, 2.42732e-17, -4.071e-05, 0.9362, 0.5, -4.071e-05, -0.0638, 0.5, 0.04, 0.872379, 0.0318128, -0.4362, 0.872379, 0.929914, -0.0319241, -0.0638, 1, -4.071e-05, 0.872379, 2.42732e-17, -0.4362, -7.64281e-05, 2.42732e-17, -4.071e-05, -0.0638, 0.5, -4.071e-05, -7.64281e-05, 0.0318128, -0.4362, -7.64281e-05, 0.929914, -0.0319241, -7.64281e-05, 2.42732e-17, -0.4362)
 
 [node name="Basic" type="Node3D"]
+process_mode = 1
 script = ExtResource("1_buevl")
 TRACK_ID = "night"
 
@@ -2290,137 +2288,6 @@ shape = SubResource("ConcavePolygonShape3D_csbjf")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hqpmt")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="EndScreen" type="ColorRect" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.670588)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/EndScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PlayAgainButton" type="Button" parent="CanvasLayer/Control/EndScreen/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
-theme_override_fonts/font = ExtResource("4_k1vvf")
-theme_override_font_sizes/font_size = 96
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0wmtg")
-text = "Play again"
-
-[node name="ReturnToMenuButton" type="Button" parent="CanvasLayer/Control/EndScreen/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
-theme_override_fonts/font = ExtResource("4_k1vvf")
-theme_override_font_sizes/font_size = 96
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0wmtg")
-text = "Return to menu"
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -104.0
-offset_top = 16.0
-offset_right = 108.0
-offset_bottom = 136.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_k1vvf")
-theme_override_font_sizes/font_size = 128
-text = "5:10.0"
-horizontal_alignment = 1
-
-[node name="RecordLabel" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -136.0
-offset_top = 120.0
-offset_right = 140.0
-offset_bottom = 166.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_k1vvf")
-theme_override_font_sizes/font_size = 48
-text = "Record: 1:5.67"
-horizontal_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -80.0
-offset_right = 312.0
-offset_bottom = -8.0
-grow_vertical = 0
-color = Color(0, 0, 0, 0.490196)
-
-[node name="Speed" type="Label" parent="CanvasLayer/Control/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -28.0
-offset_right = 152.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_k1vvf")
-theme_override_font_sizes/font_size = 64
-text = "100 km/h"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="GhostCar" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0232, -1.19736, 0)
@@ -3476,7 +3343,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/billboard/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_axoen")
 
+[node name="CanvasLayer" parent="." instance=ExtResource("5_rfmga")]
+
 [connection signal="body_entered" from="Track/roadEndGoal/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="pressed" from="CanvasLayer/Control/EndScreen/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/EndScreen/VBoxContainer/ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

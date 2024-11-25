@@ -1,11 +1,11 @@
-[gd_scene load_steps=122 format=4 uid="uid://dmhs5na7tes76"]
+[gd_scene load_steps=121 format=4 uid="uid://dmhs5na7tes76"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_mpf4q"]
 [ext_resource type="Texture2D" uid="uid://bptnwaygmppqf" path="res://assets/world/countryside_sky_dome_2k.hdr" id="3_r0uyw"]
-[ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="4_ns8gj"]
 [ext_resource type="PackedScene" uid="uid://vs77sivxj54x" path="res://scenes/car.tscn" id="4_q1r44"]
 [ext_resource type="Texture2D" uid="uid://dmhtwg3qy3qxf" path="res://assets/parts/billboard_tankcoBanner.png" id="5_0j36q"]
 [ext_resource type="Texture2D" uid="uid://cu7ggarj8sgwu" path="res://assets/parts/flagTankco_tankcoBanner.png" id="6_l6xdr"]
+[ext_resource type="PackedScene" uid="uid://c538ntn2nevhb" path="res://scenes/reusables/TrackCanvas.tscn" id="6_qhhnu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky3fn"]
 resource_name = "grass"
@@ -512,8 +512,6 @@ ssil_enabled = true
 sdfgi_enabled = true
 fog_sky_affect = 0.1
 volumetric_fog_density = 0.01
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wmtg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_baxsh"]
 resource_name = "Material.006"
@@ -1489,7 +1487,6 @@ emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_547qx"]
 resource_name = "tankco"
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("5_0j36q")
 emission_enabled = true
 texture_filter = 1
@@ -1602,7 +1599,6 @@ points = PackedVector3Array(0.9362, 1, 0.04, 0.9362, 0.5, 0.04, 0.9362, 1, -4.07
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6hle"]
 resource_name = "tankco"
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("6_l6xdr")
 emission_enabled = true
 texture_filter = 1
@@ -1643,7 +1639,6 @@ shadow_mesh = SubResource("ArrayMesh_m0hjv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cjwt"]
 resource_name = "_defaultMat"
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5eube"]
@@ -1736,6 +1731,7 @@ shadow_mesh = SubResource("ArrayMesh_n5vnn")
 points = PackedVector3Array(0, 0, -0.03441, 0, 0, 0, 0, 0.159798, -0.03441, 0.03441, 0, -0.03441, 0.03441, 0, 0, 0, 0.159798, 0, 0.03441, 0.159798, -0.03441, 0.0037017, 1.22993, -0.0307083, 0.03441, 0.159798, 0, 0.0037017, 1.22993, -0.00370507, 0.0307049, 1.22993, -0.0307083, 0.0114015, 1.25, -0.0230085, 0.0307049, 1.22993, -0.00370507, 0.0114015, 1.25, -0.0114082, 0.0230018, 1.25, -0.0230085, 0.0230018, 1.25, -0.0114082)
 
 [node name="Basic" type="Node3D"]
+process_mode = 1
 script = ExtResource("1_mpf4q")
 TRACK_ID = "go_fast"
 
@@ -1863,137 +1859,6 @@ environment = SubResource("Environment_fg530")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.600769, -0.546092, -0.583832, 0.799423, 0.41039, 0.438752, 0, -0.730317, 0.683108, 0, 2.83424, 0)
 shadow_enabled = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="EndScreen" type="ColorRect" parent="CanvasLayer/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.670588)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/EndScreen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PlayAgainButton" type="Button" parent="CanvasLayer/Control/EndScreen/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
-theme_override_fonts/font = ExtResource("4_ns8gj")
-theme_override_font_sizes/font_size = 96
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0wmtg")
-text = "Play again"
-
-[node name="ReturnToMenuButton" type="Button" parent="CanvasLayer/Control/EndScreen/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
-theme_override_fonts/font = ExtResource("4_ns8gj")
-theme_override_font_sizes/font_size = 96
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_0wmtg")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0wmtg")
-text = "Return to menu"
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -104.0
-offset_top = 16.0
-offset_right = 108.0
-offset_bottom = 136.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_ns8gj")
-theme_override_font_sizes/font_size = 128
-text = "5:10.0"
-horizontal_alignment = 1
-
-[node name="RecordLabel" type="Label" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -136.0
-offset_top = 120.0
-offset_right = 140.0
-offset_bottom = 166.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_ns8gj")
-theme_override_font_sizes/font_size = 48
-text = "Record: 1:5.67"
-horizontal_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -80.0
-offset_right = 312.0
-offset_bottom = -8.0
-grow_vertical = 0
-color = Color(0, 0, 0, 0.490196)
-
-[node name="Speed" type="Label" parent="CanvasLayer/Control/ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -28.0
-offset_right = 152.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_ns8gj")
-theme_override_font_sizes/font_size = 64
-text = "100 km/h"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Car" parent="." instance=ExtResource("4_q1r44")]
 
@@ -3316,7 +3181,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="flagTankco/Group/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_w3rx6")
 
+[node name="CanvasLayer" parent="." instance=ExtResource("6_qhhnu")]
+
 [connection signal="body_entered" from="Track/roadEndGoal/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="pressed" from="CanvasLayer/Control/EndScreen/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/EndScreen/VBoxContainer/ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
