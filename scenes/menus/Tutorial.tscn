@@ -20,7 +20,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_b20vw"]
 resource_name = "tutorial"
-length = 9.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -28,14 +28,12 @@ tracks/0/path = NodePath("Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3, 6),
+"times": PackedFloat32Array(0, 4.03333, 8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["Use W/A/S/D, arrows or controller (next text) to control your car
-R to restart, F to flip car", "R2/L2 Forward/Backward, any joy left/right to turn left/right,
-Y to restart (X on nintendo controller)
- 
-", "After you have played a track once, playing it again will make a 
+R to restart, F to flip car", "Xbox Y/Nintendo X to restart, Xbox X/Nintendo Y to flip car 
+Xbox Menu/Ninteno + to pause", "After you have played a track once, playing it again will make a 
 ghost apppear, doing what u did in your last record run"]
 }
 
@@ -102,7 +100,7 @@ text = "3.0"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 autostart = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
