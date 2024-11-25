@@ -170,17 +170,31 @@ theme_override_font_sizes/font_size = 48
 text = "Record: 1:5.67"
 horizontal_alignment = 1
 
-[node name="Speed" type="Label" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -320.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 80.0
-grow_horizontal = 0
-theme_override_constants/outline_size = 5
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -80.0
+offset_right = 312.0
+offset_bottom = -8.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Speed" type="Label" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -28.0
+offset_right = 152.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_b8j7r")
 theme_override_font_sizes/font_size = 64
 text = "100 km/h"

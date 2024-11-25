@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 		car_positions.append($Car.global_position)
 		car_rotations.append($Car.rotation)
 	
-	$CanvasLayer/Control/ColorRect/Speed.text = "%s km/h" % str(int($Car.linear_velocity.length() * 2))
+	$CanvasLayer/Control/Speed.text = "%s km/h" % str(int($Car.linear_velocity.length() * 2))
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Car":

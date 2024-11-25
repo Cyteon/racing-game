@@ -9,8 +9,8 @@ func _input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	if Globals.show_fps:
+		$Control/FPSLabel.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,6 +19,8 @@ func _process(delta: float) -> void:
 		$Control/PauseScreen.visible = false
 	
 	was_paused = get_tree().paused
+	
+	$Control/FPSLabel.text = "%s FPS" % Engine.get_frames_per_second()
 
 func _on_resume_button_pressed() -> void:
 	get_tree().paused = false
