@@ -20,6 +20,12 @@ var tracks = [
 		"difficulty": "Medium"
 	},
 	{
+		"name": "NEW!!1!",
+		"id": "new",
+		"img": "track_new.png",
+		"difficulty": "Hard"
+	},
+	{
 		"name": "Night",
 		"id": "night",
 		"img": "track_night.png",
