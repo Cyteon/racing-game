@@ -1,9 +1,10 @@
-[gd_scene load_steps=113 format=4 uid="uid://b6008arpnia0n"]
+[gd_scene load_steps=121 format=4 uid="uid://b6008arpnia0n"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_buevl"]
 [ext_resource type="PackedScene" uid="uid://vs77sivxj54x" path="res://scenes/car.tscn" id="2_3ex8e"]
 [ext_resource type="Texture2D" uid="uid://daijbawfpqdu0" path="res://assets/world/starry_night_sky_dome_2k.hdr" id="3_5xwm8"]
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="4_k1vvf"]
+[ext_resource type="Texture2D" uid="uid://dmhtwg3qy3qxf" path="res://assets/parts/billboard_tankcoBanner.png" id="5_wff4e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky3fn"]
 resource_name = "grass"
@@ -1651,6 +1652,129 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_10p0t")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hdwp"]
+resource_name = "bark"
+albedo_color = Color(0.921864, 0.829421, 0.682543, 1)
+emission_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4swyh"]
+resource_name = "road"
+albedo_color = Color(0.553237, 0.553237, 0.553237, 1)
+emission_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_547qx"]
+resource_name = "tankco"
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("5_wff4e")
+emission_enabled = true
+texture_filter = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng4n4"]
+resource_name = "grey"
+albedo_color = Color(0.975468, 0.977247, 0.984322, 1)
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gr2g1"]
+_surfaces = [{
+"aabb": AABB(-0.0638, 0.5, 0, 1, 0.5, 1e-05),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABAADAAEABAABAAUABgAEAAUABQAHAAYACgAIAAkACQALAAoA"),
+"name": "bark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("Mqa9MgAAAD8AAACAMqa9MnsUbj8AAACAk6mCvQAAAD8AAACAk6mCvQAAgD8AAACAzqpvPwAAgD8AAACAnFVfP3sUbj8AAACAzqpvPwAAAD8AAACAnFVfPwAAAD8AAACAmakCPQAAAD8AAACAAytXPwAAAD8AAACAmakCPeLpZT8AAACAAytXP+LpZT8AAACA")
+}, {
+"aabb": AABB(-0.0638, 0.5, 0, 1, 0.5, 0.04),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABAAAAAIAAgAFAAQABgADAAEAAQAHAAYABwAIAAYABwAJAAgABwAKAAkABwALAAoACwAHAAQABAAFAAsA"),
+"name": "road",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAD/////AAAAAAAA//8AAAAA//8AAAAAAAAAAAAAAAD///////8AAP////8AAAAAVRAAAAAAAAD//wAA//8AAH8YAAAAAAAAf+cAAAAAAACp7wAAAAAAAP//AAAAAAAA")
+}, {
+"aabb": AABB(-0.0638, 0.5, 0.04, 1, 0.5, 1e-05),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIA"),
+"name": "tankco",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP////8AAAAAAAD//wAAAAA=")
+}, {
+"aabb": AABB(0, 2.42732e-17, -0.4362, 0.8724, 0.93, 0.4362),
+"format": 34896613377,
+"index_count": 342,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIAAwAEAAIABAAFAAIABQAGAAIABQAHAAYABwAIAAYABAADAAkACQAHAAQACQAKAAcACgAIAAcACwAKAAkACQAMAAsADQAMAAkACwAMAA4ADgAPAAsAEAAPAA4ADgARABAAEQASABAAEwARAA0AEgARABMADQAUABMAFAANAAkAEwAVABIACQADABQABgAIABYAFgAXAAYAGQAYAAcABwAFABkAHAAaABsAGwAdABwAEAASAB4AHgAfABAAIAAeABIAIQAgABIAIgAhABIAEgAVACIAIAAdAB4AHQAjAB4AHQAfACMAHQAbAB8AGwAQAB8AJgAkACUAJQAnACYAKgAoACkAKQAcACoAKQArABwAKwAaABwAKwAnABoALAAoACoALAArACgALQAsACoALgAtACoAKgAvAC4ALAARACsAEQAmACsAJgAnACsADgAmABEABAAHABgAGAAwAAQADgAMACQAJAAmAA4AJQALAA8ADwAnACUACwAlAAgACAAKAAsAJQAWAAgAGwAnAA8ADwAQABsAGwAaACcAIwAfACsAKwApACMADAANADEAGAAMADEAMAAYADEAMgAwADEAMwAyADEAMQA0ADMAGAAkAAwAGAAlACQAFgAlABgAFwAWABgAGAAZABcAMAAyADUANQAZADAANQAXABkAFAADAAEAAQA0ABQAAQAzADQAEwAUADQANAAtABMAEwAtACIAIgAVABMALQAuACIABQAEADAAMAAZAAUAAgAGABcAFwA1AAIANQAqAAIAKgAgAAIAHQAgACoAKgAcAB0AKgA1ADIAMgAvACoAKQAoAB4AHgAjACkAMQANABEAEQAsADEAKAArAB8AHwAeACgAIQAAAAIAAgAgACEALQA0ADEAMQAsAC0A"),
+"name": "grey",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 54,
+"vertex_data": PackedByteArray("AAD/////AAAAAKGJ//8AAAAA//9G7QAAAAAAAP//AAAAAMcIRu0AAAAAyIBG7QAAAACQiUbtAAAAAMcIuBIAAAAAxwgAAAAAAAAAAEbtAAAAAAAAAAAAAFwJAAAAAAAAXAkAALgSAABcCQAARu0AAKL2AAC4EgAAovYAAAAAAAD//wAAAAAAAKL2AABG7QAA//8AAEbtAACi9gAA//8AAFwJAAD//wAA//8AAP//AABcCccIAAAAAFwJkIlG7QAAXAnHCLgSAABcCciARu0AAKL2xwgAAAAA///HCAAAAACi9pCJRu0AAP//kIlG7QAA///HCEbtAAD//8cIuBIAAP////9G7QAA////////AAD//6GJ//8AAP//yIBG7QAAXAmDA7gSAABcCYMDAAAAAKL2gwO4EgAAovaDAwAAAACi9scIRu0AAKL2yIBG7QAAovY390btAACi9scIuBIAAKL2gwNG7QAAovaDA///AACi9qGJ//8AAKL2N/f//wAAXAnHCEbtAABcCYMDRu0AAFwJN/f//wAAXAmhif//AABcCYMD//8AAFwJN/dG7QAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uuymm"]
+resource_name = "billboard_Mesh billboard"
+_surfaces = [{
+"aabb": AABB(-0.0638, 0.5, 0, 1, 0.5, 1e-05),
+"attribute_data": PackedByteArray("CFRptfZ6lcEIVGm16nQOwoPBIED2epXBg8EgQPZ6GcLebhPC9noZwsZiCcLqdA7C3m4TwvZ6lcHGYgnC9nqVwYrBoL/2epXBulwEwvZ6lcGKwaC/3m4JwrpcBMLebgnC"),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABAADAAEABAABAAUABgAEAAUABQAHAAYACgAIAAkACQALAAoA"),
+"material": SubResource("StandardMaterial3D_8hdwp"),
+"name": "bark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("Mqa9MgAAAD8AAACAMqa9MnsUbj8AAACAk6mCvQAAAD8AAACAk6mCvQAAgD8AAACAzqpvPwAAgD8AAACAnFVfP3sUbj8AAACAzqpvPwAAAD8AAACAnFVfPwAAAD8AAACAmakCPQAAAD8AAACAAytXPwAAAD8AAACAmakCPeLpZT8AAACAAytXP+LpZT8AAACA/////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+//////wAA/7//////AAD/v/////8AAP+/")
+}, {
+"aabb": AABB(-0.0638, 0.5, 0, 1, 0.5, 0.04),
+"attribute_data": PackedByteArray("d4UAAHeFqkH/fwAA/3+qQUZ3lohGd1WD//+WiP//VYO4iFWDuIiWiP9/VYMAAJaIontVgxUNVYO5CFWDAABVg4d6qkGHegAA/3+qQf9/AAA="),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIABgAEAAUABQAHAAYACgAIAAkACQALAAoACwAMAAoACwANAAwACwAOAA0ACwAPAA4AEgAQABEAEQATABIA"),
+"material": SubResource("StandardMaterial3D_4swyh"),
+"name": "road",
+"primitive": 3,
+"uv_scale": Vector4(73.7165, 76.7402, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAD//////78AAAAA////vwAA//8AAP+/AAAAAAAA/78AAP//////vwAA//8AAP+//////////7//////AAD/vwAAAAAAAP//AAAAAP////9VEAAAAAD/////AAD/////fxgAAAAA//9/5wAAAAD//6nvAAAAAP////8AAAAA/////wAA////v/////////+///8AAAAA/7//////AAD/v/9/////f////3////9///////9/////f////3////9//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//fwAA/38AAP9/AAD/fwAA")
+}, {
+"aabb": AABB(-0.0638, 0.5, 0.04, 1, 0.5, 1e-05),
+"attribute_data": PackedByteArray("////f/9//3///wAA/38AAA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIA"),
+"material": SubResource("StandardMaterial3D_547qx"),
+"name": "tankco",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAAAAAIAAAAAAAAAAgP////8AAACAAAD//wAAAID/f////3////9/////f///")
+}, {
+"aabb": AABB(0, 2.42732e-17, -0.4362, 0.8724, 0.93, 0.4362),
+"attribute_data": PackedByteArray("/38AAP9/1zxRewAA/3+Xg1F7FH9Re2RBUXvhPK1EFH//PxR/UXuXg/8/l4P/f99F/38Uf1F730VRe2JKUXsUf64EYkquBN9FAADfRa4EFH8AABR/rgSXg1F7l4MAAJeD/3+Xg/9/iKhRe4io/38KUVF7ClGthFGl/39Rpa2EMFT/fzBUrgSIqAAAiKiuBApRAAAKUa2El4OthBR//7+Xg1G7FH+thAAA/38AAP9/1zz/f5eDrYThPK2EZEH/vxR/rYRiSq2E30VQ+2JKUPvfRVF7FH9Re2RBUXuDBFF74TytRBR//z8Uf/8/yYFRe8mB/3/Jgf9/1zz/f4MEUXuXg61EyYGtRJeD/39iSq2EYkr/fxR/rYQUf62El4OthMmBUPuXg1D7yYFRe5eDrgSXg1F7yYGuBMmB/38Uf/9/l4NRexR/AAAUfwAAl4OuBBR///9RpVD7UaX//zBUUPswVK2El4OthMmBUbuXg1G7FH+thBR//3+DBP9/1zz/f8mBUbvJgf+/yYH/vxR/rYThPK2EZEGthIME/3+Xg/9/1zythJeDrYTJga2E1zxQ+5eDUPvJgf//1zz//5eDUPvXPP9/FH9RexR//39kQVF7ZEH/f+E8UXvhPP9/AABRe4MErgSDBAAAAAAAAOE8rgThPFF7FH9Re5eDrgQUf64El4OuBBR/AAAUf64EZEEAAGRBUXuXg64El4NRe8mBrgTJgVD7Ykr//2JKUPsUf///FH//f5eD/38Uf///l4P//xR/rYSXg62EFH9Q+5eDUPsUfw=="),
+"format": 34896613399,
+"index_count": 342,
+"index_data": PackedByteArray("AgAAAAEAAQADAAIAAwAEAAIABAAFAAIABQAGAAIABQAHAAYABwAIAAYABAADAAkACQAHAAQACQAKAAcACgAIAAcADQALAAwADAAOAA0ADwAOAAwADQAOABAAEAARAA0AEgARABAAEAATABIAEwAUABIAFQATAA8AFAATABUADwAWABUAFgAPAAwAFQAXABQADAAYABYAGwAZABoAGgAcABsAHwAdAB4AHgAgAB8AIwAhACIAIgAkACMAJwAlACYAJgAoACcAKQAmACUAKgApACUAKwAqACUAJQAsACsAKQAtACYALQAuACYALQAoAC4ALQAvACgALwAnACgAMgAwADEAMQAzADIANgA0ADUANQA3ADYANQA4ADcAOAA5ADcAOAA6ADkAOwA0ADYAOwA4ADQAPAA7ADYAPQA8ADYANgA+AD0AOwA/ADgAPwBAADgAQAA6ADgAQQBAAD8ARABCAEMAQwBFAEQASABGAEcARwBJAEgATABKAEsASwBNAEwASgBMAE4ATgBPAEoATABQAE4AUQBNAEsASwBSAFEAUQBTAE0AVgBUAFUAVQBXAFYAWgBYAFkAWwBaAFkAXABbAFkAXQBcAFkAXgBdAFkAWQBfAF4AWwBgAFoAWwBhAGAAYgBhAFsAYwBiAFsAWwBkAGMAXABdAGUAZQBkAFwAZQBjAGQAaABmAGcAZwBpAGgAZwBqAGkAawBoAGkAaQBsAGsAawBsAG0AbQBuAGsAbABvAG0AcgBwAHEAcQBzAHIAdgB0AHUAdQB3AHYAdwB4AHYAeAB5AHYAegB5AHgAeAB7AHoAfgB8AH0AfQB/AH4AggCAAIEAgQCDAIIAhgCEAIUAhQCHAIYAigCIAIkAiQCLAIoAjgCMAI0AjQCPAI4AkgCQAJEAkQCTAJIA"),
+"material": SubResource("StandardMaterial3D_ng4n4"),
+"name": "grey",
+"primitive": 3,
+"uv_scale": Vector4(68.6929, 71.2283, 0, 0),
+"vertex_count": 148,
+"vertex_data": PackedByteArray("AAD//////78AAKGJ////vwAA//9G7f+/AAAAAP///78AAMcIRu3/vwAAyIBG7f+/AACQiUbt/78AAMcIuBL/vwAAxwgAAP+/AAAAAEbt/78AAAAAAAD/vwAAAAAAAP//AAAAAEbt//9cCQAAAAD//1wJAAC4Ev//XAkAAEbt//+i9gAAuBL//6L2AAAAAP////8AAAAA//+i9gAARu3/////AABG7f//ovYAAP////9cCQAA////////AAD/////AAAAAP////8AAMcIAAD//1wJxwgAAP//AACQiUbt//9cCZCJRu3//1wJxwi4Es2cAADHCLgSzZxcCciARu3NnAAAyIBG7c2covbHCAAA/////8cIAAD//6L2kIlG7f////+QiUbt/////wAARu3/v///xwhG7f+///8AAAAA/7///8cIuBL/v/////9G7f+//////////7///6GJ////v///AAD///+///+QiUbtkM///8iARu3/v///xwgAAP+/XAmDA7gS/79cCYMDAAD/v6L2gwO4Ev+/ovaDAwAA/7+i9scIRu3/v6L2yIBG7f+/ovY390bt/7+i9pCJRu3Cz6L2xwi4Ev+/ovbHCAAA/7+i9oMDAAD/v6L2gwNG7f+/ovaDA////7+i9qGJ////v6L2N/f///+/ovYAAEbt/7+i9oMDuBL/v6L2AAC4Ev+/AADHCLgS/79cCccIuBL/vwAAxwhG7f+/XAnHCEbt/79cCQAAuBIAgFwJgwO4EgCAovYAALgSAICi9oMDuBIAgFwJAAAAAP//ovYAAAAA//9cCYMDAAD//6L2gwMAAP//AADHCAAA//8AAAAAAAD//1wJxwgAAP/////HCAAA/////wAAAAD//6L2xwgAAP/////HCLgSzZyi9scIuBLNnP//yIBG7c2covbIgEbtzZxcCQAARu3/v1wJgwNG7f+/XAkAALgS/79cCccIuBL/v1wJxwhG7f+/XAk39////79cCaGJ////v1wJgwP///+/XAmDA7gS/79cCYMDAAD/v1wJxwgAAP+/XAmQiUbt/79cCciARu3/v1wJN/dG7f+/AAAAAP//AIAAAKGJ//8AgFwJAAD//wCAXAmDA///AIBcCaGJ//8AgKL2AAD//wCAovaDA///AID//6GJ//8AgP//AAD//wCAovahif//AIAAAMcIRu3//1wJxwhG7f//AADIgEbt//9cCciARu3//wAAkIlG7f//XAmQiUbt//8AAP//Ru3//1wJN/dG7f//ovY390bt////////Ru3/////kIlG7f//ovaQiUbt//9cCTf3Ru3//1wJN/f/////ovY390bt//+i9jf3/////6L2xwhG7f/////HCEbt//+i9siARu3/////yIBG7f//XAkAAEbt//+i9gAARu3//1wJgwNG7f//ovaDA0bt//+i9scIuBL/v///xwi4Ev+/ovbHCEbt/7///8cIRu3/vwAA//////+/AAD//0bt/7//////////v/////9G7f+/XAmDA////79cCYMDRu3/v6L2gwP///+/ovaDA0bt/7//f////3////9/////f////3////9/////f/7//3////9/////f////3////9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8//39G3f9/Rt3/f0bd/39G3QAA/38AAP9/AAD/fwAA/3//f0bd/39G3f9/Rt3/f0bd/38AAP1/AQD/fwAA/38AAP9/AAD/fwAA/38AAP9/AABaMtIm/38AAP9/AAD///9/////f////3////9//3////9/////f///B1kOsv9/////f////3////9/////f////3////9/////f////3////9///////9/////f////3////9//3////9/////f////3////9/////f/7//3////9//v//f////3////9/////f/7//3/+//9///8AAP9/AAD/fwAA/38AAP9//38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f////3////9//////////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3//P/9//z//f/8//3//P/9/////f////3////9/////f////3////9/////f///////f////3////9/////f////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gr2g1")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_axoen"]
+points = PackedVector3Array(0.9362, 1, 0.04, 0.9362, 0.5, 0.04, 0.9362, 1, -4.071e-05, -0.0638, 1, 0.04, 0.872379, 2.42732e-17, -4.071e-05, 0.9362, 0.5, -4.071e-05, -0.0638, 0.5, 0.04, 0.872379, 0.0318128, -0.4362, 0.872379, 0.929914, -0.0319241, -0.0638, 1, -4.071e-05, 0.872379, 2.42732e-17, -0.4362, -7.64281e-05, 2.42732e-17, -4.071e-05, -0.0638, 0.5, -4.071e-05, -7.64281e-05, 0.0318128, -0.4362, -7.64281e-05, 0.929914, -0.0319241, -7.64281e-05, 2.42732e-17, -0.4362)
+
 [node name="Basic" type="Node3D"]
 script = ExtResource("1_buevl")
 TRACK_ID = "night"
@@ -2318,1029 +2442,1039 @@ use_collision = true
 size = Vector3(400, 1, 400)
 material = SubResource("StandardMaterial3D_jykwl")
 
-[node name="Foliage" type="Node3D" parent="."]
+[node name="Decor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5594, 0, 30.1701)
 
-[node name="tree_fat" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_fat" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -47.1572, -0.318985, -6.94399)
 mesh = SubResource("ArrayMesh_vv8g5")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_fat"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_fat"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_fat/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_fat/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8g4ct")
 
-[node name="tree_fat2" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_fat2" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -51.7238, -0.318985, -4.04018)
 mesh = SubResource("ArrayMesh_vv8g5")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_fat2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_fat2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_fat2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_fat2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8g4ct")
 
-[node name="tree_fat3" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_fat3" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -47.5123, -0.318985, -12.361)
 mesh = SubResource("ArrayMesh_vv8g5")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_fat3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_fat3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_fat3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_fat3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8g4ct")
 
-[node name="tree_fat4" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_fat4" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -55.6072, -0.318985, -1.54933)
 mesh = SubResource("ArrayMesh_vv8g5")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_fat4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_fat4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_fat4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_fat4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_8g4ct")
 
-[node name="tree_oak" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_oak" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 66.1393, -0.05, -53.9528)
 mesh = SubResource("ArrayMesh_mw330")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_oak"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_oak"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_oak/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_oak/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_k34ry")
 
-[node name="tree_oak2" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_oak2" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 68.512, -0.05, -59.8231)
 mesh = SubResource("ArrayMesh_mw330")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_oak2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_oak2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_oak2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_oak2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_k34ry")
 
-[node name="tree_oak3" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_oak3" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 73.9736, -0.05, -64.0685)
 mesh = SubResource("ArrayMesh_mw330")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_oak3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_oak3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_oak3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_oak3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_k34ry")
 
-[node name="tree_oak4" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_oak4" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 83.2499, -0.05, -46.4272)
 mesh = SubResource("ArrayMesh_mw330")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_oak4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_oak4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_oak4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_oak4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_k34ry")
 
-[node name="tree_oak5" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_oak5" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 83.2499, -0.05, 53.8576)
 mesh = SubResource("ArrayMesh_mw330")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_oak5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_oak5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_oak5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_oak5/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_k34ry")
 
-[node name="tree_oak6" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_oak6" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 58.7215, -0.05, 34.4879)
 mesh = SubResource("ArrayMesh_mw330")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_oak6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_oak6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_oak6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_oak6/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_k34ry")
 
-[node name="tree_blocks" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.05, 78.9665)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_blocks2" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks2" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 44.275, -0.05, 86.3807)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_blocks3" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks3" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 106.732, -0.05, 16.4155)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_blocks7" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks7" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 100.577, -0.05, 19.8057)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks7/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_blocks8" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks8" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 105.752, -0.05, 23.3122)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks8/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_blocks4" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks4" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -63.8869, -0.05, -38.8396)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_blocks5" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks5" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -62.2206, -0.05, -33.6908)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks5/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_blocks6" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_blocks6" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -59.5084, -0.05, -41.6362)
 mesh = SubResource("ArrayMesh_0bhx4")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_blocks6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_blocks6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_blocks6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_blocks6/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_mtcse")
 
-[node name="tree_detailed" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_detailed" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -20.7865, -0.110358, 17.2237)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_detailed"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_detailed"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_detailed/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_detailed/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="tree_detailed2" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_detailed2" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -28.4289, -0.110358, 35.4138)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_detailed2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_detailed2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_detailed2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_detailed2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="tree_detailed7" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_detailed7" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 61.5183, -0.110358, 1.89306)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_detailed7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_detailed7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_detailed7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_detailed7/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Foliage/tree_detailed7/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Decor/tree_detailed7/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="tree_detailed3" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_detailed3" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 159.082, -0.110358, 35.4138)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_detailed3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_detailed3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_detailed3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_detailed3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="tree_detailed5" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_detailed5" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 159.082, -0.110358, 30.7305)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_detailed5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_detailed5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_detailed5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_detailed5/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="tree_detailed6" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_detailed6" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 156.68, -0.110358, 28.0647)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_detailed6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_detailed6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_detailed6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_detailed6/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="tree_detailed4" type="MeshInstance3D" parent="Foliage"]
+[node name="tree_detailed4" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(9.6313, 2.69038, 0, -2.61939, 9.37717, -2.28198, -0.613938, 2.19784, 9.73615, 162.51, -0.110358, 38.8369)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/tree_detailed4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/tree_detailed4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/tree_detailed4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/tree_detailed4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
-[node name="rock_tallA" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.60689, 0, -6.49116, 0, 10, 0, 6.49116, 0, -7.60689, 81.2111, -0.652198, 32.4025)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA2" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA2" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.18393, 0, 6.95637, 0, 10, 0, -6.95637, 0, -7.18393, 76.3453, -0.652198, 31.6325)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA2/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA3" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA3" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(9.66039, 0, 2.58397, 0, 10, 0, -2.58397, 0, 9.66039, 79.1822, -0.652198, 28.4246)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA4" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA4" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.60689, 0, -6.49116, 0, 10, 0, 6.49116, 0, -7.60689, 10.586, -0.652198, 43.8325)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA5" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA5" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.18393, 0, 6.95637, 0, 10, 0, -6.95637, 0, -7.18393, 5.72026, -0.652198, 43.0625)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA5/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA6" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA6" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(9.66039, 0, 2.58397, 0, 10, 0, -2.58397, 0, 9.66039, 8.55705, -0.652198, 39.8546)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA6/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA7" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA7" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.60689, 0, -6.49116, 0, 10, 0, 6.49116, 0, -7.60689, 94.9157, -0.652198, 92.0093)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA7"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA7"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA7/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA8" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA8" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.18393, 0, 6.95637, 0, 10, 0, -6.95637, 0, -7.18393, 90.05, -0.652198, 112.939)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA8"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA8"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA8/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA9" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA9" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(9.66039, 0, 2.58397, 0, 10, 0, -2.58397, 0, 9.66039, 92.8868, -0.652198, 109.731)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA9"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA9"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA9/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA9/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA10" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA10" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.60689, 0, -6.49116, 0, 10, 0, 6.49116, 0, -7.60689, 94.9157, -0.652198, -75.2914)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA10"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA10"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA10/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA10/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA11" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA11" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.18393, 0, 6.95637, 0, 10, 0, -6.95637, 0, -7.18393, 90.05, -0.652198, -97.7607)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA11"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA11"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA11/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA11/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA12" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA12" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(9.66039, 0, 2.58397, 0, 10, 0, -2.58397, 0, 9.66039, 92.8868, -0.652198, -100.969)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA12"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA12"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA12/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA12/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA13" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA13" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.60689, 0, -6.49116, 0, 10, 0, 6.49116, 0, -7.60689, -29.7829, -0.652198, -28.8386)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA13"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA13"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA13/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA13/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA14" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA14" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.18393, 0, 6.95637, 0, 10, 0, -6.95637, 0, -7.18393, -34.6486, -0.652198, -29.6086)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA14"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA14"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA14/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA14/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA15" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA15" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(9.66039, 0, 2.58397, 0, 10, 0, -2.58397, 0, 9.66039, -31.8118, -0.652198, -32.8165)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA15"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA15"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA15/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA15/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA16" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA16" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.60689, 0, -6.49116, 0, 10, 0, 6.49116, 0, -7.60689, 5.51546, -0.652198, -79.4847)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA16"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA16"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA16/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA16/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA17" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA17" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(-7.18393, 0, 6.95637, 0, 10, 0, -6.95637, 0, -7.18393, 0.649719, -0.652198, -80.2547)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA17"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA17"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA17/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA17/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="rock_tallA18" type="MeshInstance3D" parent="Foliage"]
+[node name="rock_tallA18" type="MeshInstance3D" parent="Decor"]
 transform = Transform3D(9.66039, 0, 2.58397, 0, 10, 0, -2.58397, 0, 9.66039, 3.48656, -0.652198, -83.4626)
 mesh = SubResource("ArrayMesh_63ond")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Foliage/rock_tallA18"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/rock_tallA18"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Foliage/rock_tallA18/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/rock_tallA18/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_clg10")
 
-[node name="FlowerBed" type="Node3D" parent="Foliage"]
+[node name="FlowerBed" type="Node3D" parent="Decor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.074, 0, 13.4006)
 
-[node name="flower_purpleB" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_purpleB" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 2.33096)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB2" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_purpleB2" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.653871, -0.05, -0.789027)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB3" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_purpleB3" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.24741, -0.05, 1.08864)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_yellowA" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_yellowA" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.739991, -0.05, 0)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA2" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_yellowA2" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.53166, -0.05, -0.189747)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA3" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_yellowA3" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.64696, -0.05, 1.42779)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA4" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_yellowA4" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.575217, -0.05, 1.56848)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_redA" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_redA" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, -0.448185)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA2" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_redA2" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.199212, -0.05, 1.37379)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA3" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_redA3" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.20562, -0.05, 0.49956)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_purpleA" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_purpleA" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA2" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_purpleA2" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02154, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA3" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_purpleA3" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.670207, -0.05, 1.25376)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_redB" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_redB" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.42861, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB2" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_redB2" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.53029, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB3" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_redB3" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02303, -0.05, 4.06702)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_yellowC" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_yellowC" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 3.41423)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC2" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_yellowC2" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.97207, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC3" type="MeshInstance3D" parent="Foliage/FlowerBed"]
+[node name="flower_yellowC3" type="MeshInstance3D" parent="Decor/FlowerBed"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.91948, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="FlowerBed6" type="Node3D" parent="Foliage"]
+[node name="FlowerBed6" type="Node3D" parent="Decor"]
 transform = Transform3D(0.718393, 0, -0.695637, 0, 1, 0, 0.695637, 0, 0.718393, 4.89804, 0, -38.2929)
 
-[node name="flower_purpleB" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_purpleB" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 2.33096)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB2" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_purpleB2" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.653871, -0.05, -0.789027)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB3" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_purpleB3" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.24741, -0.05, 1.08864)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_yellowA" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_yellowA" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.739991, -0.05, 0)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA2" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_yellowA2" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.53166, -0.05, -0.189747)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA3" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_yellowA3" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.64696, -0.05, 1.42779)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA4" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_yellowA4" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.575217, -0.05, 1.56848)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_redA" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_redA" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, -0.448185)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA2" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_redA2" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.199212, -0.05, 1.37379)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA3" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_redA3" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.20562, -0.05, 0.49956)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_purpleA" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_purpleA" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA2" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_purpleA2" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02154, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA3" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_purpleA3" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.670207, -0.05, 1.25376)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_redB" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_redB" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.42861, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB2" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_redB2" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.53029, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB3" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_redB3" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02303, -0.05, 4.06702)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_yellowC" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_yellowC" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 3.41423)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC2" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_yellowC2" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.97207, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC3" type="MeshInstance3D" parent="Foliage/FlowerBed6"]
+[node name="flower_yellowC3" type="MeshInstance3D" parent="Decor/FlowerBed6"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.91948, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="FlowerBed2" type="Node3D" parent="Foliage"]
+[node name="FlowerBed2" type="Node3D" parent="Decor"]
 transform = Transform3D(-0.347263, 0, 0.937768, 0, 1, 0, -0.937768, 0, -0.347263, -26.074, 0, 57.0419)
 
-[node name="flower_purpleB" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_purpleB" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 2.33096)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB2" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_purpleB2" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.653871, -0.05, -0.789027)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB3" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_purpleB3" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.24741, -0.05, 1.08864)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_yellowA" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_yellowA" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.739991, -0.05, 0)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA2" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_yellowA2" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.53166, -0.05, -0.189747)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA3" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_yellowA3" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.64696, -0.05, 1.42779)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA4" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_yellowA4" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.575217, -0.05, 1.56848)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_redA" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_redA" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, -0.448185)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA2" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_redA2" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.199212, -0.05, 1.37379)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA3" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_redA3" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.20562, -0.05, 0.49956)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_purpleA" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_purpleA" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA2" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_purpleA2" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02154, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA3" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_purpleA3" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.670207, -0.05, 1.25376)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_redB" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_redB" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.42861, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB2" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_redB2" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.53029, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB3" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_redB3" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02303, -0.05, 4.06702)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_yellowC" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_yellowC" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 3.41423)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC2" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_yellowC2" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.97207, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC3" type="MeshInstance3D" parent="Foliage/FlowerBed2"]
+[node name="flower_yellowC3" type="MeshInstance3D" parent="Decor/FlowerBed2"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.91948, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="FlowerBed3" type="Node3D" parent="Foliage"]
+[node name="FlowerBed3" type="Node3D" parent="Decor"]
 transform = Transform3D(-0.474841, 0, 0.880072, 0, 1, 0, -0.880072, 0, -0.474841, 44.2956, 0, -36.465)
 
-[node name="flower_purpleB" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_purpleB" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 2.33096)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB2" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_purpleB2" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.653871, -0.05, -0.789027)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB3" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_purpleB3" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.24741, -0.05, 1.08864)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_yellowA" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_yellowA" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.739991, -0.05, 0)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA2" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_yellowA2" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.53166, -0.05, -0.189747)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA3" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_yellowA3" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.64696, -0.05, 1.42779)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA4" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_yellowA4" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.575217, -0.05, 1.56848)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_redA" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_redA" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, -0.448185)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA2" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_redA2" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.199212, -0.05, 1.37379)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA3" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_redA3" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.20562, -0.05, 0.49956)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_purpleA" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_purpleA" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA2" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_purpleA2" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02154, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA3" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_purpleA3" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.670207, -0.05, 1.25376)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_redB" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_redB" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.42861, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB2" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_redB2" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.53029, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB3" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_redB3" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02303, -0.05, 4.06702)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_yellowC" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_yellowC" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 3.41423)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC2" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_yellowC2" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.97207, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC3" type="MeshInstance3D" parent="Foliage/FlowerBed3"]
+[node name="flower_yellowC3" type="MeshInstance3D" parent="Decor/FlowerBed3"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.91948, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="FlowerBed4" type="Node3D" parent="Foliage"]
+[node name="FlowerBed4" type="Node3D" parent="Decor"]
 transform = Transform3D(-0.998377, 0, -0.0569541, 0, 1, 0, 0.0569541, 0, -0.998377, 31.1478, 0, -52.2349)
 
-[node name="flower_purpleB" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_purpleB" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 2.33096)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB2" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_purpleB2" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.653871, -0.05, -0.789027)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB3" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_purpleB3" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.24741, -0.05, 1.08864)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_yellowA" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_yellowA" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.739991, -0.05, 0)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA2" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_yellowA2" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.53166, -0.05, -0.189747)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA3" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_yellowA3" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.64696, -0.05, 1.42779)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA4" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_yellowA4" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.575217, -0.05, 1.56848)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_redA" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_redA" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, -0.448185)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA2" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_redA2" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.199212, -0.05, 1.37379)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA3" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_redA3" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.20562, -0.05, 0.49956)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_purpleA" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_purpleA" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA2" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_purpleA2" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02154, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA3" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_purpleA3" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.670207, -0.05, 1.25376)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_redB" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_redB" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.42861, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB2" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_redB2" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.53029, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB3" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_redB3" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02303, -0.05, 4.06702)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_yellowC" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_yellowC" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 3.41423)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC2" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_yellowC2" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.97207, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC3" type="MeshInstance3D" parent="Foliage/FlowerBed4"]
+[node name="flower_yellowC3" type="MeshInstance3D" parent="Decor/FlowerBed4"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.91948, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="FlowerBed5" type="Node3D" parent="Foliage"]
+[node name="FlowerBed5" type="Node3D" parent="Decor"]
 transform = Transform3D(-0.841313, 0, 0.540549, 0, 1, 0, -0.540549, 0, -0.841313, 71.2609, 0, 56.257)
 
-[node name="flower_purpleB" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_purpleB" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 2.33096)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB2" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_purpleB2" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.653871, -0.05, -0.789027)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_purpleB3" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_purpleB3" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.24741, -0.05, 1.08864)
 mesh = SubResource("ArrayMesh_fhq45")
 skeleton = NodePath("")
 
-[node name="flower_yellowA" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_yellowA" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.739991, -0.05, 0)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA2" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_yellowA2" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.53166, -0.05, -0.189747)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA3" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_yellowA3" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.64696, -0.05, 1.42779)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_yellowA4" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_yellowA4" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.575217, -0.05, 1.56848)
 mesh = SubResource("ArrayMesh_qqxnk")
 skeleton = NodePath("")
 
-[node name="flower_redA" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_redA" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, -0.448185)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA2" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_redA2" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.199212, -0.05, 1.37379)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_redA3" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_redA3" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.20562, -0.05, 0.49956)
 mesh = SubResource("ArrayMesh_iyl6o")
 skeleton = NodePath("")
 
-[node name="flower_purpleA" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_purpleA" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA2" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_purpleA2" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02154, -0.05, 0.20257)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_purpleA3" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_purpleA3" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.670207, -0.05, 1.25376)
 mesh = SubResource("ArrayMesh_plmqp")
 skeleton = NodePath("")
 
-[node name="flower_redB" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_redB" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.42861, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB2" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_redB2" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 2.53029, -0.05, 0)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_redB3" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_redB3" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.02303, -0.05, 4.06702)
 mesh = SubResource("ArrayMesh_8bajx")
 skeleton = NodePath("")
 
-[node name="flower_yellowC" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_yellowC" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.05, 3.41423)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC2" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_yellowC2" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 1.97207, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
 
-[node name="flower_yellowC3" type="MeshInstance3D" parent="Foliage/FlowerBed5"]
+[node name="flower_yellowC3" type="MeshInstance3D" parent="Decor/FlowerBed5"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.91948, -0.05, -0.624853)
 mesh = SubResource("ArrayMesh_uonch")
 skeleton = NodePath("")
+
+[node name="billboard" type="MeshInstance3D" parent="Decor"]
+transform = Transform3D(8.15027, 0, -5.79423, 0, 10, 0, 5.79423, 0, 8.15027, 117.04, -0.01, -62.2691)
+mesh = SubResource("ArrayMesh_uuymm")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decor/billboard"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decor/billboard/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_axoen")
 
 [connection signal="body_entered" from="Track/roadEndGoal/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Control/EndScreen/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
