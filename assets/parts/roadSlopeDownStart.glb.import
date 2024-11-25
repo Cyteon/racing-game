@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clw3eikeil128"
-path="res://.godot/imported/fenceStraight.glb-268f42443f981925a076455dc25e7f17.scn"
+uid="uid://b827ca24kk0jy"
+path="res://.godot/imported/roadSlopeDownStart.glb-6577e5c12d29089f56876e34eed6c762.scn"
 
 [deps]
 
-source_file="res://assets/parts/fenceStraight.glb"
-dest_files=["res://.godot/imported/fenceStraight.glb-268f42443f981925a076455dc25e7f17.scn"]
+source_file="res://assets/parts/roadSlopeDownStart.glb"
+dest_files=["res://.godot/imported/roadSlopeDownStart.glb-6577e5c12d29089f56876e34eed6c762.scn"]
 
 [params]
 
