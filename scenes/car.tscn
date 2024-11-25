@@ -206,7 +206,7 @@ mass = 300.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.26, 0)
 script = ExtResource("1_kulqu")
-ENGINE_POWER = 1000
+ENGINE_POWER = 1200
 
 [node name="Car" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.135211, 0, 0, 0, 0.135211, 0, 0, 0, 0.135211, -0.0590311, 0.448176, -0.0133219)
@@ -224,7 +224,7 @@ wheel_roll_influence = 1.0
 wheel_radius = 0.335
 wheel_friction_slip = 5.0
 suspension_travel = 0.25
-suspension_stiffness = 125.0
+suspension_stiffness = 100.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
@@ -238,7 +238,7 @@ wheel_roll_influence = 1.0
 wheel_radius = 0.335
 wheel_friction_slip = 4.8
 suspension_travel = 0.25
-suspension_stiffness = 125.0
+suspension_stiffness = 100.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D2"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
@@ -252,7 +252,7 @@ wheel_roll_influence = 1.0
 wheel_radius = 0.335
 wheel_friction_slip = 5.0
 suspension_travel = 0.25
-suspension_stiffness = 125.0
+suspension_stiffness = 100.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D3"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
@@ -266,7 +266,7 @@ wheel_roll_influence = 1.0
 wheel_radius = 0.335
 wheel_friction_slip = 4.8
 suspension_travel = 0.25
-suspension_stiffness = 125.0
+suspension_stiffness = 100.0
 
 [node name="Wheel" type="MeshInstance3D" parent="VehicleWheel3D4"]
 transform = Transform3D(-5.90104e-09, 0, 0.135, 0, 0.135, 0, -0.135, 0, -5.90104e-09, 0, 0, 0)
