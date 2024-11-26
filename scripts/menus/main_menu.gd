@@ -41,14 +41,14 @@ func load_settings() -> void:
 	var msaa
 	
 	match config.get_value("graphics", "antialiasing", 0):
+		0:
+			msaa = Viewport.MSAA_DISABLED
 		1:
 			msaa = Viewport.MSAA_2X
 		2:
 			msaa = Viewport.MSAA_4X
 		3:
 			msaa = Viewport.MSAA_8X
-		_:
-			msaa = Viewport.MSAA_DISABLED
 	
 	get_viewport().msaa_3d = msaa
 	$"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected = config.get_value("graphics", "antialiasing", 0)
