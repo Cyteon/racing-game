@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=4 uid="uid://ulseekf3bxf3"]
+[gd_scene load_steps=120 format=4 uid="uid://ulseekf3bxf3"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_mislr"]
 [ext_resource type="PackedScene" uid="uid://c538ntn2nevhb" path="res://scenes/reusables/TrackCanvas.tscn" id="2_af13h"]
@@ -591,7 +591,7 @@ ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
 fog_sky_affect = 0.1
-volumetric_fog_density = 0.01
+volumetric_fog_density = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_baxsh"]
 resource_name = "Material.006"
@@ -755,8 +755,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yp7x8")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jykwl"]
-albedo_color = Color(0.436667, 1, 0.35, 1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_b0c0q"]
+size = Vector2(10000, 10000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1i8ye"]
+albedo_color = Color(0.435294, 1, 0.34902, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btrws"]
 resource_name = "leafsGreen"
@@ -1884,6 +1887,7 @@ shape = SubResource("ConcavePolygonShape3D_csbjf")
 [node name="CanvasLayer" parent="." instance=ExtResource("2_af13h")]
 
 [node name="Car" parent="." instance=ExtResource("4_0dkhn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1113, 0.660367, 0.0955734)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rhvb5")
@@ -1906,11 +1910,11 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.518, -0.56, 58.608)
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.518, -0.0736085, 58.608)
 use_collision = true
-size = Vector3(300, 1, 300)
-material = SubResource("StandardMaterial3D_jykwl")
+mesh = SubResource("PlaneMesh_b0c0q")
+material = SubResource("StandardMaterial3D_1i8ye")
 
 [node name="Decor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2098, 0, 44.288)

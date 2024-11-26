@@ -31,15 +31,26 @@ func load_settings() -> void:
 	if err != OK:
 		return
 	
+	# Graphics
+	
 	Engine.max_fps = config.get_value("graphics", "fps", 0)
 	$"TabContainer/3/HBoxContainer/Graphics/FPS/FPS/SpinBox".value = config.get_value("graphics", "fps", 0)
 	Globals.show_fps = config.get_value("graphics", "show_fps", false)
 	$"TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton".button_pressed = config.get_value("graphics", "show_fps", false)
+	
+	# Display
+	DisplayServer.window_set_mode(
+		DisplayServer.WINDOW_MODE_FULLSCREEN 
+		if config.get_value("display", "fullscreen", true)
+		else DisplayServer.WINDOW_MODE_WINDOWED
+	)
+	$"TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton".button_pressed = config.get_value("display", "fullscreen", true)
 
 func save_settings() -> void:
 	var config = ConfigFile.new()
 	config.set_value("graphics", "fps", $"TabContainer/3/HBoxContainer/Graphics/FPS/FPS/SpinBox".value)
 	config.set_value("graphics", "show_fps", $"TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton".button_pressed)
+	config.set_value("display", "fullscreen", $"TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton".button_pressed)
 	
 	config.save("user://settings.cfg")
 	

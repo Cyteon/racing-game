@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=4 uid="uid://b6008arpnia0n"]
+[gd_scene load_steps=121 format=4 uid="uid://b6008arpnia0n"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_buevl"]
 [ext_resource type="PackedScene" uid="uid://vs77sivxj54x" path="res://scenes/car.tscn" id="2_3ex8e"]
@@ -849,9 +849,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yp7x8")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jykwl"]
-albedo_color = Color(0.436667, 1, 0.35, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btrws"]
 resource_name = "leafsGreen"
@@ -1772,6 +1769,12 @@ shadow_mesh = SubResource("ArrayMesh_gr2g1")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_axoen"]
 points = PackedVector3Array(0.9362, 1, 0.04, 0.9362, 0.5, 0.04, 0.9362, 1, -4.071e-05, -0.0638, 1, 0.04, 0.872379, 2.42732e-17, -4.071e-05, 0.9362, 0.5, -4.071e-05, -0.0638, 0.5, 0.04, 0.872379, 0.0318128, -0.4362, 0.872379, 0.929914, -0.0319241, -0.0638, 1, -4.071e-05, 0.872379, 2.42732e-17, -0.4362, -7.64281e-05, 2.42732e-17, -4.071e-05, -0.0638, 0.5, -4.071e-05, -7.64281e-05, 0.0318128, -0.4362, -7.64281e-05, 0.929914, -0.0319241, -7.64281e-05, 2.42732e-17, -0.4362)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_uhht0"]
+size = Vector2(10000, 10000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bcw1"]
+albedo_color = Color(0.435294, 1, 0.34902, 1)
+
 [node name="Basic" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_buevl")
@@ -2302,12 +2305,6 @@ skeleton = NodePath("")
 wait_time = 3.0
 one_shot = true
 autostart = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8806, -0.560362, 0.199768)
-use_collision = true
-size = Vector3(400, 1, 400)
-material = SubResource("StandardMaterial3D_jykwl")
 
 [node name="Decor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5594, 0, 30.1701)
@@ -3344,6 +3341,12 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_axoen")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_rfmga")]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.518, -0.0736085, 58.608)
+use_collision = true
+mesh = SubResource("PlaneMesh_uhht0")
+material = SubResource("StandardMaterial3D_3bcw1")
 
 [connection signal="body_entered" from="Track/roadEndGoal/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

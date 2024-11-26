@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://dpi3bfbw0s77p"]
+[gd_scene load_steps=106 format=4 uid="uid://dpi3bfbw0s77p"]
 
 [ext_resource type="Texture2D" uid="uid://bptnwaygmppqf" path="res://assets/world/countryside_sky_dome_2k.hdr" id="1_fjshk"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_hn5n8"]
@@ -566,9 +566,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yp7x8")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jykwl"]
-albedo_color = Color(0.436667, 1, 0.35, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btrws"]
 resource_name = "leafsGreen"
@@ -1528,6 +1525,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_88f4o")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ffllh"]
+size = Vector2(10000, 10000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_la8ld"]
+albedo_color = Color(0.435294, 1, 0.34902, 1)
+
 [node name="Basic" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_hn5n8")
@@ -1714,12 +1717,6 @@ skeleton = NodePath("")
 wait_time = 3.0
 one_shot = true
 autostart = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8806, -0.560362, 0.199768)
-use_collision = true
-size = Vector3(400, 1, 400)
-material = SubResource("StandardMaterial3D_jykwl")
 
 [node name="Decor" type="Node3D" parent="."]
 
@@ -2774,6 +2771,12 @@ mesh = SubResource("ArrayMesh_blb8d")
 skeleton = NodePath("")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("5_vox86")]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.518, -0.0736085, 58.608)
+use_collision = true
+mesh = SubResource("PlaneMesh_ffllh")
+material = SubResource("StandardMaterial3D_la8ld")
 
 [connection signal="body_entered" from="Track/roadEndGoal/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

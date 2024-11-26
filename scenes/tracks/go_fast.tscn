@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=4 uid="uid://dmhs5na7tes76"]
+[gd_scene load_steps=122 format=4 uid="uid://dmhs5na7tes76"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_mpf4q"]
 [ext_resource type="Texture2D" uid="uid://bptnwaygmppqf" path="res://assets/world/countryside_sky_dome_2k.hdr" id="3_r0uyw"]
@@ -674,9 +674,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yp7x8")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jykwl"]
-albedo_color = Color(0.436667, 1, 0.35, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btrws"]
 resource_name = "leafsGreen"
@@ -1730,6 +1727,12 @@ shadow_mesh = SubResource("ArrayMesh_n5vnn")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w3rx6"]
 points = PackedVector3Array(0, 0, -0.03441, 0, 0, 0, 0, 0.159798, -0.03441, 0.03441, 0, -0.03441, 0.03441, 0, 0, 0, 0.159798, 0, 0.03441, 0.159798, -0.03441, 0.0037017, 1.22993, -0.0307083, 0.03441, 0.159798, 0, 0.0037017, 1.22993, -0.00370507, 0.0307049, 1.22993, -0.0307083, 0.0114015, 1.25, -0.0230085, 0.0307049, 1.22993, -0.00370507, 0.0114015, 1.25, -0.0114082, 0.0230018, 1.25, -0.0230085, 0.0230018, 1.25, -0.0114082)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_3pv3y"]
+size = Vector2(10000, 10000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j80a7"]
+albedo_color = Color(0.435294, 1, 0.34902, 1)
+
 [node name="Basic" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_mpf4q")
@@ -1875,12 +1878,6 @@ skeleton = NodePath("")
 wait_time = 3.0
 one_shot = true
 autostart = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.9, -0.560362, 0.199768)
-use_collision = true
-size = Vector3(400, 1, 200)
-material = SubResource("StandardMaterial3D_jykwl")
 
 [node name="Decor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -204.936, 0, 0)
@@ -3182,6 +3179,12 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_w3rx6")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_qhhnu")]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.518, -0.0736085, 58.608)
+use_collision = true
+mesh = SubResource("PlaneMesh_3pv3y")
+material = SubResource("StandardMaterial3D_j80a7")
 
 [connection signal="body_entered" from="Track/roadEndGoal/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
