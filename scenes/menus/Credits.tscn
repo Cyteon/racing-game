@@ -24,6 +24,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_gqj8f")
 
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Button" type="Button" parent="."]
 top_level = true
 layout_mode = 1
@@ -49,16 +60,5 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ugwi0")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ugwi0")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ugwi0")
 text = "Back"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 16.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

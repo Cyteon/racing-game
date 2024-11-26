@@ -72,12 +72,19 @@ func load_settings() -> void:
 	$"TabContainer/3/HBoxContainer/Graphics/Shadows/OptionButton".selected = config.get_value("graphics", "shadow_quality", 2)
 	
 	# Display
+	
 	DisplayServer.window_set_mode(
 		DisplayServer.WINDOW_MODE_FULLSCREEN 
 		if config.get_value("display", "fullscreen", true)
 		else DisplayServer.WINDOW_MODE_WINDOWED
 	)
 	$"TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton".button_pressed = config.get_value("display", "fullscreen", true)
+
+	# Sound
+	
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(config.get_value("sound", "volume", 1)))
+	$"TabContainer/3/HBoxContainer/Sound/Volume/HSlider".value = config.get_value("sound", "volume", 1)
+	$"TabContainer/3/HBoxContainer/Sound/Volume/Label".text = "Volume: %s%%" % (config.get_value("sound", "volume", 1) * 100)
 
 func save_settings() -> void:
 	var config = ConfigFile.new()
@@ -86,6 +93,7 @@ func save_settings() -> void:
 	config.set_value("graphics", "antialiasing", $"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected)
 	config.set_value("graphics", "shadow_quality", $"TabContainer/3/HBoxContainer/Graphics/Shadows/OptionButton".selected)
 	config.set_value("display", "fullscreen", $"TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton".button_pressed)
+	config.set_value("sound", "volume", $"TabContainer/3/HBoxContainer/Sound/Volume/HSlider".value)
 	
 	config.save("user://settings.cfg")
 	
@@ -95,10 +103,8 @@ func _on_play_button_pressed() -> void:
 	$ClickSound.play()
 	$TabContainer.current_tab = 1
 
-
 func _on_credits_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/Credits.tscn")
-
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

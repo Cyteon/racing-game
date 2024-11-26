@@ -33,7 +33,8 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": ["Use W/A/S/D, arrows or controller (next text) to control your car
-R to restart, F to flip car", "Xbox Y/Nintendo X to restart, Xbox X/Nintendo Y to flip car 
+R to restart, F to flip car", "Xbox Y/Nintendo X to restart 
+Xbox X/Nintendo Y to flip car 
 Xbox Menu/Ninteno + to pause", "After you have played a track once, playing it again will make a 
 ghost apppear, doing what u did in your last record run"]
 }
