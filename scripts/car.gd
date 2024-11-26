@@ -13,7 +13,7 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
-	if get_parent().run_started:
+	if get_parent().run_started	:
 		engine_force = Input.get_axis("backward", "forward") * ENGINE_POWER
 		
 		if engine_force == 0:
