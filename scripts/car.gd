@@ -9,11 +9,11 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action("drift"):
 		var lateral_velocity = global_transform.basis.x * global_transform.basis.x.dot(linear_velocity)
-		apply_impulse(-lateral_velocity * .95)
+		apply_impulse(-lateral_velocity * .5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
-	if get_parent().run_started	:
+	if get_parent().run_started:
 		engine_force = Input.get_axis("backward", "forward") * ENGINE_POWER
 		
 		if engine_force == 0:
