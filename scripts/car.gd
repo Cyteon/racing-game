@@ -6,9 +6,13 @@ extends VehicleBody3D
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("flip"):
 		rotation = Vector3.ZERO
+	
+	if event.is_action("drift"):
+		var lateral_velocity = global_transform.basis.x * global_transform.basis.x.dot(linear_velocity)
+		apply_impulse(-lateral_velocity * .95)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:	
 	if get_parent().run_started:
 		engine_force = Input.get_axis("backward", "forward") * ENGINE_POWER
 		
@@ -18,6 +22,7 @@ func _process(delta: float) -> void:
 		else:
 			var tween = get_tree().create_tween()
 			tween.tween_property($AudioStreamPlayer3D, "volume_db", -10, .5)
+			
 	
 	steering = move_toward(steering, Input.get_axis("right", "left") * MAX_STEER, delta * 10)
 	

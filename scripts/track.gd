@@ -25,7 +25,7 @@ func _input(event: InputEvent) -> void:
 		$CanvasLayer/Control/PauseScreen.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta: float) -> void:	
 	if not run_finished and run_started:
 		time += delta
 		$CanvasLayer/Control/Label.text = "%s:%s.%s" % [int(time / 60), int(time) % 60, int(time*100) % 100]
