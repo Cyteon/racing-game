@@ -30,6 +30,12 @@ var tracks = [
 		"id": "night",
 		"img": "track_night.png",
 		"difficulty": "Hard"
+	},
+	{
+		"name": "Darkness",
+		"id": "darkness",
+		"img": "track_darkness.png",
+		"difficulty": "Hardcore"
 	}
 ]
 
