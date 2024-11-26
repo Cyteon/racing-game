@@ -38,6 +38,21 @@ func load_settings() -> void:
 	Globals.show_fps = config.get_value("graphics", "show_fps", false)
 	$"TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton".button_pressed = config.get_value("graphics", "show_fps", false)
 	
+	var msaa
+	
+	match config.get_value("graphics", "antialiasing", 0):
+		1:
+			msaa = Viewport.MSAA_2X
+		2:
+			msaa = Viewport.MSAA_4X
+		3:
+			msaa = Viewport.MSAA_8X
+		_:
+			msaa = Viewport.MSAA_DISABLED
+	
+	get_viewport().msaa_3d = msaa
+	$"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected = config.get_value("graphics", "antialiasing", 0)
+	
 	# Display
 	DisplayServer.window_set_mode(
 		DisplayServer.WINDOW_MODE_FULLSCREEN 
@@ -50,6 +65,7 @@ func save_settings() -> void:
 	var config = ConfigFile.new()
 	config.set_value("graphics", "fps", $"TabContainer/3/HBoxContainer/Graphics/FPS/FPS/SpinBox".value)
 	config.set_value("graphics", "show_fps", $"TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton".button_pressed)
+	config.set_value("graphics", "antialiasing", $"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected)
 	config.set_value("display", "fullscreen", $"TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton".button_pressed)
 	
 	config.save("user://settings.cfg")
@@ -101,4 +117,5 @@ func _on_settings_button_pressed() -> void:
 	$TabContainer.current_tab = 2
 
 func _setting_changed(value) -> void:
+	print_debug("Setting changed, saving")
 	save_settings()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://di44cowlm865b"]
+[gd_scene load_steps=22 format=3 uid="uid://di44cowlm865b"]
 
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="1_573jp"]
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_thdx3"]
@@ -14,11 +14,16 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_li36l"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vq2fr"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m5b4"]
+content_margin_left = 16.0
+content_margin_right = 16.0
 bg_color = Color(0.0666667, 0.0666667, 0.105882, 1)
 
 [sub_resource type="Theme" id="Theme_xcp6u"]
 default_font_size = 48
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_vq2fr")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_6m5b4")
 
 [sub_resource type="Theme" id="Theme_358ne"]
@@ -27,6 +32,32 @@ CheckButton/icons/checked_disabled = ExtResource("6_48tqk")
 CheckButton/icons/unchecked = ExtResource("6_48tqk")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glfwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5s283"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77a3h"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic6oi"]
+bg_color = Color(0.192157, 0.196078, 0.266667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ag8rk"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0941176, 0.0980392, 0.14902, 1)
+
+[sub_resource type="Theme" id="Theme_qm2wu"]
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_5s283")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_77a3h")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_77a3h")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_77a3h")
+PopupMenu/font_sizes/font_size = 48
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_ic6oi")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_ag8rk")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aefv2"]
 
@@ -383,6 +414,30 @@ layout_mode = 2
 theme = SubResource("Theme_358ne")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_glfwl")
 
+[node name="AA" type="HBoxContainer" parent="TabContainer/3/HBoxContainer/Graphics"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="TabContainer/3/HBoxContainer/Graphics/AA"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Antialiasing"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/3/HBoxContainer/Graphics/AA"]
+layout_mode = 2
+theme = SubResource("Theme_qm2wu")
+theme_override_font_sizes/font_size = 48
+selected = 0
+item_count = 4
+popup/item_0/text = "Off"
+popup/item_1/text = "2x"
+popup/item_1/id = 1
+popup/item_2/text = "4x"
+popup/item_2/id = 2
+popup/item_3/text = "8x"
+popup/item_3/id = 3
+
 [node name="Display" type="VBoxContainer" parent="TabContainer/3/HBoxContainer"]
 layout_mode = 2
 
@@ -430,4 +485,5 @@ volume_db = 20.0
 [connection signal="pressed" from="TabContainer/3/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="TabContainer/3/HBoxContainer/Graphics/FPS/FPS/SpinBox" to="." method="_setting_changed"]
 [connection signal="toggled" from="TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton" to="." method="_setting_changed"]
+[connection signal="item_selected" from="TabContainer/3/HBoxContainer/Graphics/AA/OptionButton" to="." method="_setting_changed"]
 [connection signal="toggled" from="TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton" to="." method="_setting_changed"]
