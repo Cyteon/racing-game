@@ -1772,7 +1772,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_rl8jx")
 
 [node name="tree_detailed4" type="MeshInstance3D" parent="Decor"]
-transform = Transform3D(9.6313, 2.69038, 0, -2.61939, 9.37717, -2.28198, -0.613938, 2.19784, 9.73615, 162.51, -0.110358, 38.8369)
+transform = Transform3D(9.6313, 2.69038, 0, -2.61939, 9.37717, -2.28198, -0.613938, 2.19784, 9.73615, 6.97204, -0.110358, -1.89458)
 mesh = SubResource("ArrayMesh_vthye")
 skeleton = NodePath("")
 

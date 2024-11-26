@@ -1761,7 +1761,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_2bxbw")
 
 [node name="roadStraightLong9" type="MeshInstance3D" parent="Track"]
-transform = Transform3D(-4.37114e-07, 0, -20, 0, 10, 0, 10, 0, -8.74228e-07, -229.803, 0, -10.046)
+transform = Transform3D(-4.36485e-07, -0.536257, -19.9712, -2.34405e-08, 9.98561, -1.07251, 10, 0, -8.74228e-07, -229.803, 0, -10.046)
 mesh = SubResource("ArrayMesh_fqaix")
 skeleton = NodePath("")
 

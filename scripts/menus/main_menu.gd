@@ -53,6 +53,24 @@ func load_settings() -> void:
 	get_viewport().msaa_3d = msaa
 	$"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected = config.get_value("graphics", "antialiasing", 0)
 	
+	var shadow_quality
+	
+	match config.get_value("graphics", "shadow_quality", 2):
+		0:
+			shadow_quality = RenderingServer.SHADOW_QUALITY_SOFT_VERY_LOW
+		1:
+			shadow_quality = RenderingServer.SHADOW_QUALITY_SOFT_LOW
+		2:
+			shadow_quality = RenderingServer.SHADOW_QUALITY_SOFT_MEDIUM
+		3:
+			shadow_quality = RenderingServer.SHADOW_QUALITY_SOFT_HIGH
+		4:
+			shadow_quality = RenderingServer.SHADOW_QUALITY_SOFT_ULTRA
+	
+	RenderingServer.positional_soft_shadow_filter_set_quality(shadow_quality)
+	RenderingServer.directional_soft_shadow_filter_set_quality(shadow_quality)
+	$"TabContainer/3/HBoxContainer/Graphics/Shadows/OptionButton".selected = config.get_value("graphics", "shadow_quality", 2)
+	
 	# Display
 	DisplayServer.window_set_mode(
 		DisplayServer.WINDOW_MODE_FULLSCREEN 
@@ -66,6 +84,7 @@ func save_settings() -> void:
 	config.set_value("graphics", "fps", $"TabContainer/3/HBoxContainer/Graphics/FPS/FPS/SpinBox".value)
 	config.set_value("graphics", "show_fps", $"TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton".button_pressed)
 	config.set_value("graphics", "antialiasing", $"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected)
+	config.set_value("graphics", "shadow_quality", $"TabContainer/3/HBoxContainer/Graphics/Shadows/OptionButton".selected)
 	config.set_value("display", "fullscreen", $"TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton".button_pressed)
 	
 	config.save("user://settings.cfg")
