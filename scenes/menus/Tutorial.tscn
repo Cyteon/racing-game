@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtl8r5he5ggnr"]
+[gd_scene load_steps=7 format=3 uid="uid://dtl8r5he5ggnr"]
 
 [ext_resource type="Script" path="res://scripts/menus/tutorial.gd" id="1_u3f4w"]
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="2_5ljt2"]
+[ext_resource type="Texture2D" uid="uid://den4nor8utlqu" path="res://assets/images/gradient.png" id="2_eaad3"]
 
 [sub_resource type="Animation" id="Animation_meiyx"]
 length = 0.001
@@ -52,14 +53,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3f4w")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.133196, 0.133196, 0.133196, 1)
+texture = ExtResource("2_eaad3")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
