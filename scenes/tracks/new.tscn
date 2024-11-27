@@ -484,7 +484,6 @@ data = PackedVector3Array(1.8492, 0.02, -1.145, 1.8492, 0.01, -1.145, 2, 0.01, -
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbd8c"]
 resource_name = "_defaultMat"
-albedo_color = Color(1, 1, 1, 1)
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l38j6"]
@@ -1909,7 +1908,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_88f4o")
 
-[node name="Basic" type="Node3D"]
+[node name="New!!1!" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_5fl8b")
 TRACK_ID = "new"

@@ -1730,7 +1730,7 @@ shadow_mesh = SubResource("ArrayMesh_qhjg7")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c2v4u"]
 points = PackedVector3Array(0, 0, -0.03441, 0, 0, 0, 0, 0.159798, -0.03441, 0.03441, 0, -0.03441, 0.03441, 0, 0, 0, 0.159798, 0, 0.03441, 0.159798, -0.03441, 0.0037017, 1.22993, -0.0307083, 0.03441, 0.159798, 0, 0.0037017, 1.22993, -0.00370507, 0.0307049, 1.22993, -0.0307083, 0.0114015, 1.25, -0.0230085, 0.0307049, 1.22993, -0.00370507, 0.0114015, 1.25, -0.0114082, 0.0230018, 1.25, -0.0230085, 0.0230018, 1.25, -0.0114082)
 
-[node name="Basic" type="Node3D"]
+[node name="Going Up" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_mislr")
 TRACK_ID = "going_up"

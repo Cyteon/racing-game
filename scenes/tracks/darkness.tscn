@@ -1370,7 +1370,7 @@ size = Vector2(10000, 10000)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bcw1"]
 albedo_color = Color(0.435294, 1, 0.34902, 1)
 
-[node name="Basic" type="Node3D"]
+[node name="Darkness" type="Node3D"]
 process_mode = 1
 script = ExtResource("1_jmnty")
 TRACK_ID = "darkness"

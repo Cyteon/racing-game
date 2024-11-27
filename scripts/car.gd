@@ -1,7 +1,8 @@
 extends VehicleBody3D
 
 @export var ENGINE_POWER: int = 300
-@export var MAX_STEER: float = 0.4
+@export var MAX_STEER: float = .4
+@export var DRIFT_MULTIPLIER: float = .4
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("flip"):
@@ -9,7 +10,7 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action("drift"):
 		var lateral_velocity = global_transform.basis.x * global_transform.basis.x.dot(linear_velocity)
-		apply_impulse(-lateral_velocity * .5)
+		apply_impulse(-lateral_velocity * DRIFT_MULTIPLIER)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	

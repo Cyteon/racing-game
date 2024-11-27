@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Racing Game"
-config/version="1.1.0-dev"
+config/version="1.1.0"
 run/main_scene="res://scenes/menus/MainMenu.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.3", "Forward Plus")
@@ -28,8 +28,7 @@ Globals="*res://scripts/singletons/globals.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/window_width_override=960
-window/size/window_height_override=540
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
