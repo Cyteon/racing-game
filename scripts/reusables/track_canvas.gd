@@ -11,6 +11,9 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	if Globals.show_fps:
 		$Control/FPSLabel.visible = true
+	
+	if OS.has_feature("mobile"):
+		print("mobile")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
