@@ -22,7 +22,7 @@ var tracks = [
 	{
 		"name": "Rainy",
 		"id": "rainy",
-		"img": "placeholder.jpg",
+		"img": "track_rainy.png",
 		"difficulty": "Medium"
 	},
 	{
