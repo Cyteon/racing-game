@@ -9,3 +9,5 @@ For controller use R2/L2 for forward/backward, and any joy left/right to go left
 Space to drift, currently in beta, so might be goofy \
 There is currently 6 tracks \
 2 easy, 1 medium, 2 hard (one is night) and 1 hardcore (night)
+
+Gameplay: https://youtu.be/EuugaErQa5Y
