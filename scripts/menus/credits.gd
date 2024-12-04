@@ -7,7 +7,24 @@ func _ready() -> void:
 	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	label.add_theme_font_size_override("normal_font_size", 32)
 	
-	label.text = "This project is licensed under the GNU GPL v3\nScroll past the GPL license to see Godot Copyright Information\nDeveloper: Cyteon\n\n"
+	label.text = "
+	This project is licensed under the GNU GPL v3
+	Scroll past the GPL license to see the Godot Copyright Information
+	Developer: Cyteon
+	
+	########## Start Other Licenses ##########
+	
+	-----     Font: Calsans     -----
+	Copyright (c) 2021, Mark Davis <mark@designermarkdavis.com> <https://www.designermarkdavis.com>, 
+	with Font \"Cal Sans\". Commissioned by Peer Richelsen for Cal.com <https://www.cal.com>.
+	See: https://github.com/calcom/font/blob/v1.0.0/OFL.txt
+	----- End Font: Calsans -----
+	
+	########## End Other Licenses  ##########
+	
+	GNU GPL v3:
+	
+	"
 	
 	var file = FileAccess.open("res://LICENSE", FileAccess.READ)
 	var content = file.get_as_text()

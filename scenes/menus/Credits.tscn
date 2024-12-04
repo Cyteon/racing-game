@@ -6,7 +6,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ugwi0"]
 
-[node name="Credits" type="Control"]
+[node name="License" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
