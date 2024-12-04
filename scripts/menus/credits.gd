@@ -17,7 +17,10 @@ func _ready() -> void:
 	-----     Font: Calsans     -----
 	Copyright (c) 2021, Mark Davis <mark@designermarkdavis.com> <https://www.designermarkdavis.com>, 
 	with Font \"Cal Sans\". Commissioned by Peer Richelsen for Cal.com <https://www.cal.com>.
-	See: https://github.com/calcom/font/blob/v1.0.0/OFL.txt
+
+	This Font Software is licensed under the SIL Open Font License, Version 1.1.
+	OFL: http://scripts.sil.org/OFL
+	Repo: https://github.com/calcom/font/blob/v1.0.0
 	----- End Font: Calsans -----
 	
 	########## End Other Licenses  ##########
