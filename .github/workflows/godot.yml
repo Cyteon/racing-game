@@ -33,11 +33,12 @@ jobs:
 
       - name: Export Builds
         run: |
-          mkdir -p build/linux build/win64
+          mkdir -p build/linux build/win64 build/android
           # Export once before exporting, failing is ok
           timeout 50 ./godot --headless --import --path . >/dev/null 2>&1 || true
           ./godot --headless --verbose --export-release "Linux/X11" project.godot "build/linux/release.x86_64"
           ./godot --headless --verbose --export-release "Windows Desktop" project.godot "build/win64/release.exe"
+          ./godot --headless --verbose --export-release "Android" project.godot "build/win64/android.apk"
       - name: Upload Linux Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -50,4 +51,10 @@ jobs:
           name: build_windows
           path: |
             build/win64
+      - name: Upload Android Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build_android
+          path: |
+            build/android
        
