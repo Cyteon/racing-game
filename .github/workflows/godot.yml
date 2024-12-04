@@ -33,7 +33,7 @@ jobs:
 
       - name: Export Builds
         run: |
-          mkdir -p build/linux build/win64 build/android
+          mkdir -p build/linux build/win64
           # Export once before exporting, failing is ok
           timeout 50 ./godot --headless --import --path . >/dev/null 2>&1 || true
           ./godot --headless --verbose --export-release "Linux/X11" project.godot "build/linux/release.x86_64"
