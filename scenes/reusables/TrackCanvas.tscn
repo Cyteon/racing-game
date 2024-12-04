@@ -206,7 +206,7 @@ theme_override_fonts/font = ExtResource("1_b8j7r")
 theme_override_font_sizes/font_size = 72
 text = "123 FPS"
 
-[node name="Control" type="Control" parent="Control"]
+[node name="MobilePauseButton" type="Control" parent="Control"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -217,16 +217,16 @@ offset_bottom = 40.0
 grow_horizontal = 0
 scale = Vector2(1.2, 1.2)
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/Control"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/MobilePauseButton"]
 position = Vector2(-86.6667, 80)
 texture_normal = ExtResource("3_s3oog")
 action = "pause"
 visibility_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Control/Control/TouchScreenButton"]
+[node name="TextureRect3" type="TextureRect" parent="Control/MobilePauseButton/TouchScreenButton"]
 show_behind_parent = true
-offset_left = -1.0
-offset_right = 99.0
+offset_left = -0.833374
+offset_right = 99.1666
 offset_bottom = 100.0
 scale = Vector2(1.01, 1.01)
 texture = ExtResource("4_pwca1")

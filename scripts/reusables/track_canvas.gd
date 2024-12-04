@@ -13,7 +13,7 @@ func _ready() -> void:
 		$Control/FPSLabel.visible = true
 	
 	if OS.has_feature("mobile"):
-		print("mobile")
+		$Control/MobilePauseButton.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
