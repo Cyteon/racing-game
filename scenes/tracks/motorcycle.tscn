@@ -1748,7 +1748,7 @@ mass = 300.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.26, 0)
 script = ExtResource("2_6cdn3")
-ENGINE_POWER = 2000
+ENGINE_POWER = 2400
 MAX_STEER = 0.6
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car"]
