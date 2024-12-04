@@ -21,7 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PhoneButtons" type="Control" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,8 +60,6 @@ offset_bottom = -284.0
 scale = Vector2(2, 2)
 action_left = "left"
 action_right = "right"
-action_up = "forward"
-action_down = "backward"
 
 [node name="Right Joystick2" parent="Control/PhoneButtons" instance=ExtResource("5_4uh8s")]
 layout_mode = 1
@@ -75,8 +72,6 @@ offset_right = -300.0
 offset_bottom = -284.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
-action_left = "left"
-action_right = "right"
 action_up = "forward"
 action_down = "backward"
 
