@@ -7,6 +7,9 @@ func _ready() -> void:
 	load_settings()
 	
 	for track in TrackManager.tracks:
+		if track.get("hide", false):
+			continue
+		
 		var card = track_container.get_node("TemplateTrack").duplicate()
 		
 		card.get_node("BG").get_node("VBox").get_node("Image").texture_normal = load("res://assets/images/%s" % track["img"])

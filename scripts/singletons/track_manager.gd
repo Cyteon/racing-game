@@ -36,6 +36,13 @@ var tracks = [
 		"id": "darkness",
 		"img": "track_darkness.png",
 		"difficulty": "Hardcore"
+	},
+	{
+		"name": "Motorcycle?",
+		"id": "motorcycle",
+		"img": "placeholder.jpg",
+		"difficulty": "?????",
+		"hide": true
 	}
 ]
 

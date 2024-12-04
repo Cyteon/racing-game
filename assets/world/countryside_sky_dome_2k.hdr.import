@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bptnwaygmppqf"
 path.bptc="res://.godot/imported/countryside_sky_dome_2k.hdr-0b023b3a042fa72b80a2117ffc0ee382.bptc.ctex"
+path.astc="res://.godot/imported/countryside_sky_dome_2k.hdr-0b023b3a042fa72b80a2117ffc0ee382.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/world/countryside_sky_dome_2k.hdr"
-dest_files=["res://.godot/imported/countryside_sky_dome_2k.hdr-0b023b3a042fa72b80a2117ffc0ee382.bptc.ctex"]
+dest_files=["res://.godot/imported/countryside_sky_dome_2k.hdr-0b023b3a042fa72b80a2117ffc0ee382.bptc.ctex", "res://.godot/imported/countryside_sky_dome_2k.hdr-0b023b3a042fa72b80a2117ffc0ee382.astc.ctex"]
 
 [params]
 

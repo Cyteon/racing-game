@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Car":
 		$CanvasLayer/Control/EndScreen.visible = true
+		$CanvasLayer/Control/EndScreen/VBoxContainer/PlayAgainButton.grab_focus()
 		run_finished = true
 		
 		if time < record or record == 0:

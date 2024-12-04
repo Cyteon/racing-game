@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://rfaii817xhv1"
 path.s3tc="res://.godot/imported/flagCheckersSmall_checkers.png-b16f0ac9af80e37733f5aa6f686f79ea.s3tc.ctex"
+path.etc2="res://.godot/imported/flagCheckersSmall_checkers.png-b16f0ac9af80e37733f5aa6f686f79ea.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/parts/flagCheckersSmall_checkers.png"
-dest_files=["res://.godot/imported/flagCheckersSmall_checkers.png-b16f0ac9af80e37733f5aa6f686f79ea.s3tc.ctex"]
+dest_files=["res://.godot/imported/flagCheckersSmall_checkers.png-b16f0ac9af80e37733f5aa6f686f79ea.s3tc.ctex", "res://.godot/imported/flagCheckersSmall_checkers.png-b16f0ac9af80e37733f5aa6f686f79ea.etc2.ctex"]
 
 [params]
 

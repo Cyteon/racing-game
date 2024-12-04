@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://omqmr8b2wk2q"
 path.s3tc="res://.godot/imported/billboardLower_tankcoBanner.png-62257e33083daa82965c9a3e4eb396f8.s3tc.ctex"
+path.etc2="res://.godot/imported/billboardLower_tankcoBanner.png-62257e33083daa82965c9a3e4eb396f8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/parts/billboardLower_tankcoBanner.png"
-dest_files=["res://.godot/imported/billboardLower_tankcoBanner.png-62257e33083daa82965c9a3e4eb396f8.s3tc.ctex"]
+dest_files=["res://.godot/imported/billboardLower_tankcoBanner.png-62257e33083daa82965c9a3e4eb396f8.s3tc.ctex", "res://.godot/imported/billboardLower_tankcoBanner.png-62257e33083daa82965c9a3e4eb396f8.etc2.ctex"]
 
 [params]
 

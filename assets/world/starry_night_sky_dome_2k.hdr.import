@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://daijbawfpqdu0"
 path.bptc="res://.godot/imported/starry_night_sky_dome_2k.hdr-65f63c76748dc54ff0de275f15da810c.bptc.ctex"
+path.astc="res://.godot/imported/starry_night_sky_dome_2k.hdr-65f63c76748dc54ff0de275f15da810c.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/world/starry_night_sky_dome_2k.hdr"
-dest_files=["res://.godot/imported/starry_night_sky_dome_2k.hdr-65f63c76748dc54ff0de275f15da810c.bptc.ctex"]
+dest_files=["res://.godot/imported/starry_night_sky_dome_2k.hdr-65f63c76748dc54ff0de275f15da810c.bptc.ctex", "res://.godot/imported/starry_night_sky_dome_2k.hdr-65f63c76748dc54ff0de275f15da810c.astc.ctex"]
 
 [params]
 

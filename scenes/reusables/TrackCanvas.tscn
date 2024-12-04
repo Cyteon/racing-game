@@ -44,7 +44,7 @@ grow_vertical = 2
 
 [node name="ResumeButton" type="Button" parent="Control/PauseScreen/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
+theme_override_colors/font_hover_color = Color(0.529412, 0.807843, 0.980392, 1)
 theme_override_fonts/font = ExtResource("1_b8j7r")
 theme_override_font_sizes/font_size = 96
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
@@ -62,7 +62,7 @@ text = "Resume"
 
 [node name="ReturnToMenuButton" type="Button" parent="Control/PauseScreen/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
+theme_override_colors/font_hover_color = Color(0.529412, 0.807843, 0.980392, 1)
 theme_override_fonts/font = ExtResource("1_b8j7r")
 theme_override_font_sizes/font_size = 96
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
@@ -104,7 +104,10 @@ grow_vertical = 2
 
 [node name="PlayAgainButton" type="Button" parent="Control/EndScreen/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
+focus_neighbor_top = NodePath("../ReturnToMenuButton")
+focus_neighbor_bottom = NodePath("../ReturnToMenuButton")
+theme_override_colors/font_hover_color = Color(0.529412, 0.807843, 0.980392, 1)
+theme_override_colors/font_focus_color = Color(0.529412, 0.807843, 0.980392, 1)
 theme_override_fonts/font = ExtResource("1_b8j7r")
 theme_override_font_sizes/font_size = 96
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
@@ -122,7 +125,10 @@ text = "Play again"
 
 [node name="ReturnToMenuButton" type="Button" parent="Control/EndScreen/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0.270588, 0.658824, 1, 1)
+focus_neighbor_top = NodePath("../PlayAgainButton")
+focus_neighbor_bottom = NodePath("../PlayAgainButton")
+theme_override_colors/font_hover_color = Color(0.529412, 0.807843, 0.980392, 1)
+theme_override_colors/font_focus_color = Color(0.529412, 0.807843, 0.980392, 1)
 theme_override_fonts/font = ExtResource("1_b8j7r")
 theme_override_font_sizes/font_size = 96
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0wmtg")
