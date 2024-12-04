@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c538ntn2nevhb"]
+[gd_scene load_steps=7 format=3 uid="uid://c538ntn2nevhb"]
 
 [ext_resource type="FontFile" uid="uid://r8canikevo76" path="res://assets/fonts/CalSans-SemiBold.otf" id="1_b8j7r"]
 [ext_resource type="Script" path="res://scripts/reusables/track_canvas.gd" id="1_t6w1a"]
 [ext_resource type="Texture2D" uid="uid://2otjyh7rkd7x" path="res://assets/ui/pause_white.png" id="3_s3oog"]
 [ext_resource type="Texture2D" uid="uid://bci52yd0m6u1b" path="res://assets/ui/pause_black.png" id="4_pwca1"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="5_4uh8s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wmtg"]
 
@@ -18,6 +19,65 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PhoneButtons" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/PhoneButtons"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -144.0
+offset_top = 80.0
+offset_right = -104.0
+offset_bottom = 120.0
+grow_horizontal = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/PhoneButtons/Control"]
+scale = Vector2(1.2, 1.2)
+texture_normal = ExtResource("3_s3oog")
+action = "pause"
+visibility_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Control/PhoneButtons/Control/TouchScreenButton"]
+show_behind_parent = true
+offset_left = -0.833374
+offset_right = 99.1666
+offset_bottom = 100.0
+scale = Vector2(1.01, 1.01)
+texture = ExtResource("4_pwca1")
+
+[node name="Left Joystick" parent="Control/PhoneButtons" instance=ExtResource("5_4uh8s")]
+layout_mode = 1
+offset_top = -584.0
+offset_bottom = -284.0
+scale = Vector2(2, 2)
+action_left = "left"
+action_right = "right"
+action_up = "forward"
+action_down = "backward"
+
+[node name="Right Joystick2" parent="Control/PhoneButtons" instance=ExtResource("5_4uh8s")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -600.0
+offset_top = -584.0
+offset_right = -300.0
+offset_bottom = -284.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+action_left = "left"
+action_right = "right"
+action_up = "forward"
+action_down = "backward"
 
 [node name="PauseScreen" type="ColorRect" parent="Control"]
 process_mode = 2
@@ -205,31 +265,6 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_b8j7r")
 theme_override_font_sizes/font_size = 72
 text = "123 FPS"
-
-[node name="MobilePauseButton" type="Control" parent="Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -48.0
-offset_right = -8.0
-offset_bottom = 40.0
-grow_horizontal = 0
-scale = Vector2(1.2, 1.2)
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/MobilePauseButton"]
-position = Vector2(-86.6667, 80)
-texture_normal = ExtResource("3_s3oog")
-action = "pause"
-visibility_mode = 1
-
-[node name="TextureRect3" type="TextureRect" parent="Control/MobilePauseButton/TouchScreenButton"]
-show_behind_parent = true
-offset_left = -0.833374
-offset_right = 99.1666
-offset_bottom = 100.0
-scale = Vector2(1.01, 1.01)
-texture = ExtResource("4_pwca1")
 
 [connection signal="pressed" from="Control/PauseScreen/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Control/PauseScreen/VBoxContainer/ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
