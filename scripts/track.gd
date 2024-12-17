@@ -48,8 +48,19 @@ func _process(delta: float) -> void:
 		car_rotations.append($Car.rotation)
 
 	$CanvasLayer/Control/Speed.text = "%s km/h" % str(int($Car.linear_velocity.length() * 2))
-	
-func _on_area_3d_body_entered(body: Node3D) -> void:
+
+func _on_play_again_button_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_return_to_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/MainMenu.tscn")
+
+func _on_timer_timeout() -> void:
+	run_started = true
+	$CanvasLayer/Control/RecordLabel.text = ("%s:%s.%s" % [int(record / 60), int(record) % 60, int(record*100) % 100]) if record > 0 else "No Record"
+
+
+func _on_track_creator_body_entered(body: Node3D) -> void:
 	if body.name == "Car":
 		$CanvasLayer/Control/EndScreen.visible = true
 		$CanvasLayer/Control/EndScreen/VBoxContainer/PlayAgainButton.grab_focus()
@@ -63,13 +74,3 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		
 		await get_tree().create_timer(0.5).timeout
 		$Car.freeze = true
-
-func _on_play_again_button_pressed() -> void:
-	get_tree().reload_current_scene()
-
-func _on_return_to_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/MainMenu.tscn")
-
-func _on_timer_timeout() -> void:
-	run_started = true
-	$CanvasLayer/Control/RecordLabel.text = ("%s:%s.%s" % [int(record / 60), int(record) % 60, int(record*100) % 100]) if record > 0 else "No Record"

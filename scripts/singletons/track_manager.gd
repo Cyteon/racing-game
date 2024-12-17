@@ -8,10 +8,10 @@ var tracks = [
 		"difficulty": "Super Easy"
 	},
 	{
-		"name": "Go Fast",
-		"id": "go_fast",
+		"name": "Bumps",
+		"id": "bumps",
 		"img": "track_go_fast.png",
-		"difficulty": "Very Easy"
+		"difficulty": "Easy"
 	},
 	{
 		"name": "Goin Up",

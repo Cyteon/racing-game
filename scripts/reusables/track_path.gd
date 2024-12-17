@@ -15,6 +15,25 @@ extends Path3D
 	get:
 		return item_counts
 
+@export var end_offset: Vector3 = Vector3(4, 0, 0):
+	set (value):
+		end_offset = value
+		spawn_items()
+	get:
+		return end_offset
+
+@export var end_rotation_offset: Vector3 = Vector3(0, 0, 0):
+	set (value):
+		end_rotation_offset = value
+		spawn_items()
+	get:
+		return end_rotation_offset
+
+signal body_entered(body: Node3D)
+
+func _ready() -> void:
+	spawn_items()
+
 func spawn_items() -> void:
 	var points = curve.get_baked_points()
 	var up_vectors = curve.get_baked_up_vectors()
@@ -26,4 +45,9 @@ func spawn_items() -> void:
 		
 		$End.position = points[-50]
 		$End.look_at(points[-49], up_vectors[-50])
-		$End.position.x -= 4
+		$End.position -= end_offset
+		$End.rotation += end_rotation_offset
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	body_entered.emit(body)

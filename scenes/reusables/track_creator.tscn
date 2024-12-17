@@ -159,6 +159,7 @@ data = PackedVector3Array(0.0318, 0.2416, -0.33, 0.0318, 0.2416, 0, 0, 0, 0, 0, 
 curve = SubResource("Curve3D_hvjdr")
 script = ExtResource("1_1c7qi")
 item_counts = Array[int]([0, 0])
+end_rotation_offset = null
 
 [node name="Track" type="CSGPolygon3D" parent="."]
 use_collision = true
@@ -202,7 +203,7 @@ path_u_distance = 0.0
 path_joined = false
 
 [node name="End" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.99905, -0.00572425, 0.123007, 0.00519472, 7.99992, 0.0344751, -0.123031, -0.0343911, 7.99898, 70.5134, 0.0294929, -28.8526)
+transform = Transform3D(7.99905, -0.00652658, 0.123007, 0.00599715, 7.99992, 0.0344751, -0.123034, -0.0343787, 7.99898, 70.5134, 0.0294929, -28.8526)
 mesh = SubResource("ArrayMesh_moddx")
 skeleton = NodePath("")
 
@@ -219,7 +220,7 @@ transform = Transform3D(1, 1.03391e-08, -1.56462e-07, -1.03391e-08, 1, 6.84515e-
 shape = SubResource("BoxShape3D_54o3e")
 
 [node name="Start" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.201221, 4.66401e-06, 7.99747, 0.0217734, 7.99997, 0.000543166, -7.99744, 0.0217801, -0.201221, -7.04401, -0.0264805, 6.98698)
+transform = Transform3D(-0.202865, -9.68343e-06, 7.99743, -0.0375713, 7.99991, -0.000943359, -7.99734, -0.0375831, -0.202863, -7.08148, -0.0641283, 7.17874)
 mesh = SubResource("ArrayMesh_cja7q")
 skeleton = NodePath("")
 
@@ -227,3 +228,5 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Start/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_r2l5u")
+
+[connection signal="body_entered" from="End/Area3D" to="." method="_on_area_3d_body_entered"]
