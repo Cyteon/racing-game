@@ -43,7 +43,7 @@ func load_settings() -> void:
 	
 	var msaa
 	
-	match config.get_value("graphics", "antialiasing", 0):
+	match config.get_value("graphics", "antialiasing", 2):
 		0:
 			msaa = Viewport.MSAA_DISABLED
 		1:
@@ -54,7 +54,7 @@ func load_settings() -> void:
 			msaa = Viewport.MSAA_8X
 	
 	get_viewport().msaa_3d = msaa
-	$"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected = config.get_value("graphics", "antialiasing", 0)
+	$"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected = config.get_value("graphics", "antialiasing", 2)
 	
 	var shadow_quality
 	
