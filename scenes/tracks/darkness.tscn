@@ -2039,3 +2039,4 @@ end_offset = Vector3(-4.25, 0, 0)
 end_rotation_offset = Vector3(0, 0, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="TrackCreator" to="." method="_on_track_creator_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkgsbeakpluh6"
-path="res://.godot/imported/track_go_fast.png-b5f1c8f1f234a6a2144f5624f15410c9.ctex"
+uid="uid://cpa4hkxi47wmr"
+path="res://.godot/imported/track_bumps.png-941bb6f86c79aa5c4c3f6c4db38f9e2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/track_go_fast.png"
-dest_files=["res://.godot/imported/track_go_fast.png-b5f1c8f1f234a6a2144f5624f15410c9.ctex"]
+source_file="res://assets/images/track_bumps.png"
+dest_files=["res://.godot/imported/track_bumps.png-941bb6f86c79aa5c4c3f6c4db38f9e2b.ctex"]
 
 [params]
 

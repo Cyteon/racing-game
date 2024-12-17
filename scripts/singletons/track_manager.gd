@@ -10,7 +10,7 @@ var tracks = [
 	{
 		"name": "Bumps",
 		"id": "bumps",
-		"img": "track_go_fast.png",
+		"img": "track_bumps.png",
 		"difficulty": "Easy"
 	},
 	{

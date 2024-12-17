@@ -93,11 +93,10 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_72cmv")
 theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_72cmv")
 theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_72cmv")
 theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_72cmv")
-current_tab = 2
+current_tab = 0
 tabs_visible = false
 
 [node name="1" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -318,6 +317,7 @@ text = "Record: 5:10.56"
 horizontal_alignment = 1
 
 [node name="3" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
