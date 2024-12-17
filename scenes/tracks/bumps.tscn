@@ -2441,9 +2441,7 @@ material = SubResource("StandardMaterial3D_j80a7")
 
 [node name="TrackCreator" parent="." instance=ExtResource("6_j8ng3")]
 curve = SubResource("Curve3D_w12cg")
-item_counts = Array[int]([0, 0, 0])
 end_offset = Vector3(0, 0, -4)
-end_rotation_offset = null
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrackCreator" to="." method="_on_track_creator_body_entered"]

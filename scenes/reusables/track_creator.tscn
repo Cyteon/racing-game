@@ -252,7 +252,6 @@ data = PackedVector3Array(-0.01, 0.7557, -0.01, -0.01, 0.7557, 0.01, -0.01, 0.19
 [node name="TrackCreator" type="Path3D"]
 curve = SubResource("Curve3D_hvjdr")
 script = ExtResource("1_1c7qi")
-light_count = 0
 end_offset = Vector3(3, 0, 0)
 
 [node name="Track" type="CSGPolygon3D" parent="."]
@@ -297,7 +296,7 @@ path_u_distance = 0.0
 path_joined = false
 
 [node name="End" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.99905, -0.00647906, 0.123007, 0.00594962, 7.99992, 0.0344751, -0.123034, -0.0343795, 7.99898, 71.5134, 0.0294929, -28.8526)
+transform = Transform3D(7.99905, -0.00648112, 0.123007, 0.00595168, 7.99992, 0.0344751, -0.123034, -0.0343794, 7.99898, 71.5134, 0.0294929, -28.8526)
 mesh = SubResource("ArrayMesh_moddx")
 skeleton = NodePath("")
 
@@ -314,7 +313,7 @@ transform = Transform3D(1, 1.03391e-08, -1.56462e-07, -1.03391e-08, 1, 6.84515e-
 shape = SubResource("BoxShape3D_54o3e")
 
 [node name="Start" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.167259, -2.6791e-05, 7.99825, -0.0231074, 7.99997, -0.000456426, -7.99822, -0.0231119, -0.167259, 13.138, -0.0946201, 7.20457)
+transform = Transform3D(-0.167258, 4.11298e-06, 7.99825, -0.0216295, 7.99997, -0.000456426, -7.99822, -0.0216344, -0.167257, 13.138, -0.0946201, 7.20457)
 mesh = SubResource("ArrayMesh_cja7q")
 skeleton = NodePath("")
 
@@ -326,6 +325,7 @@ shape = SubResource("ConcavePolygonShape3D_r2l5u")
 [node name="Items" type="Node3D" parent="."]
 
 [node name="Light" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.7281, 0)
 visible = false
 
 [node name="Light" type="MeshInstance3D" parent="Light"]

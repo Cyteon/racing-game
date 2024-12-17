@@ -2337,8 +2337,9 @@ shape = SubResource("ConvexPolygonShape3D_c2v4u")
 
 [node name="TrackCreator" parent="." instance=ExtResource("6_ifrau")]
 curve = SubResource("Curve3D_bc6rr")
+light_count = 5
 end_offset = Vector3(4, 2, 0)
-end_rotation_offset = null
+end_rotation_offset = Vector3(0, 0, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrackCreator" to="." method="_on_track_creator_body_entered"]

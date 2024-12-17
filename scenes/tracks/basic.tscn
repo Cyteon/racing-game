@@ -2240,8 +2240,6 @@ mesh = SubResource("PlaneMesh_ffllh")
 material = SubResource("StandardMaterial3D_la8ld")
 
 [node name="TrackCreator" parent="." instance=ExtResource("6_4ylbr")]
-item_counts = Array[int]([0])
-end_rotation_offset = null
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrackCreator" to="." method="_on_track_creator_body_entered"]

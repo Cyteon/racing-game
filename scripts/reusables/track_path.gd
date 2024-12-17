@@ -1,7 +1,7 @@
 @tool
 extends Path3D
 
-@export var light_count: int = 5:
+@export var light_count: int = 0:
 	set (value):
 		light_count = value
 		spawn_items()
