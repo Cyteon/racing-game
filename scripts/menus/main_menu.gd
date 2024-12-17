@@ -74,6 +74,18 @@ func load_settings() -> void:
 	RenderingServer.directional_soft_shadow_filter_set_quality(shadow_quality)
 	$"TabContainer/3/HBoxContainer/Graphics/Shadows/OptionButton".selected = config.get_value("graphics", "shadow_quality", 2)
 	
+	get_viewport().use_taa = config.get_value("graphics", "taa", false)
+	$"TabContainer/3/HBoxContainer/Graphics/TAA/CheckButton".button_pressed = config.get_value("graphics", "taa", false)
+	
+	get_viewport().screen_space_aa = Viewport.SCREEN_SPACE_AA_FXAA if config.get_value("graphics", "fxaa", true) else Viewport.SCREEN_SPACE_AA_DISABLED	
+	$"TabContainer/3/HBoxContainer/Graphics/FXAA/CheckButton".button_pressed = config.get_value("graphics", "fxaa", true)
+	
+	DisplayServer.window_set_vsync_mode(
+		DisplayServer.VSYNC_ENABLED if config.get_value("graphics", "vsync", false)
+		else DisplayServer.VSYNC_DISABLED
+	)
+	$"TabContainer/3/HBoxContainer/Graphics/VSync/CheckButton".button_pressed = config.get_value("graphics", "vsync", false)
+	
 	# Display
 	
 	DisplayServer.window_set_mode(
@@ -95,6 +107,9 @@ func save_settings() -> void:
 	config.set_value("graphics", "show_fps", $"TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton".button_pressed)
 	config.set_value("graphics", "antialiasing", $"TabContainer/3/HBoxContainer/Graphics/AA/OptionButton".selected)
 	config.set_value("graphics", "shadow_quality", $"TabContainer/3/HBoxContainer/Graphics/Shadows/OptionButton".selected)
+	config.set_value("graphics", "taa", $"TabContainer/3/HBoxContainer/Graphics/TAA/CheckButton".button_pressed)
+	config.set_value("graphics", "fxaa", $"TabContainer/3/HBoxContainer/Graphics/FXAA/CheckButton".button_pressed)
+	config.set_value("graphics", "vsync", $"TabContainer/3/HBoxContainer/Graphics/VSync/CheckButton".button_pressed)
 	config.set_value("display", "fullscreen", $"TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton".button_pressed)
 	config.set_value("sound", "volume", $"TabContainer/3/HBoxContainer/Sound/Volume/HSlider".value)
 	

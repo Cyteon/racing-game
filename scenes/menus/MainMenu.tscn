@@ -93,10 +93,11 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_72cmv")
 theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_72cmv")
 theme_override_styles/tab_hovered = SubResource("StyleBoxEmpty_72cmv")
 theme_override_styles/tab_unselected = SubResource("StyleBoxEmpty_72cmv")
-current_tab = 0
+current_tab = 2
 tabs_visible = false
 
 [node name="1" type="Control" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -317,7 +318,6 @@ text = "Record: 5:10.56"
 horizontal_alignment = 1
 
 [node name="3" type="Control" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -366,10 +366,10 @@ offset_right = -64.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 64
 
 [node name="Graphics" type="VBoxContainer" parent="TabContainer/3/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="TabContainer/3/HBoxContainer/Graphics"]
 layout_mode = 2
@@ -410,6 +410,48 @@ theme_override_font_sizes/font_size = 48
 text = "Show FPS"
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/3/HBoxContainer/Graphics/ShowFPS"]
+layout_mode = 2
+theme = SubResource("Theme_358ne")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_glfwl")
+
+[node name="TAA" type="HBoxContainer" parent="TabContainer/3/HBoxContainer/Graphics"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/3/HBoxContainer/Graphics/TAA"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "TAA"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/3/HBoxContainer/Graphics/TAA"]
+layout_mode = 2
+theme = SubResource("Theme_358ne")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_glfwl")
+
+[node name="FXAA" type="HBoxContainer" parent="TabContainer/3/HBoxContainer/Graphics"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/3/HBoxContainer/Graphics/FXAA"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "FXAA"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/3/HBoxContainer/Graphics/FXAA"]
+layout_mode = 2
+theme = SubResource("Theme_358ne")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_glfwl")
+
+[node name="VSync" type="HBoxContainer" parent="TabContainer/3/HBoxContainer/Graphics"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/3/HBoxContainer/Graphics/VSync"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "VSync"
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/3/HBoxContainer/Graphics/VSync"]
 layout_mode = 2
 theme = SubResource("Theme_358ne")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_glfwl")
@@ -466,6 +508,7 @@ popup/item_4/id = 4
 
 [node name="Display" type="VBoxContainer" parent="TabContainer/3/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="TabContainer/3/HBoxContainer/Display"]
 layout_mode = 2
@@ -489,6 +532,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_aefv2")
 
 [node name="Sound" type="VBoxContainer" parent="TabContainer/3/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="TabContainer/3/HBoxContainer/Sound"]
 layout_mode = 2
@@ -537,6 +581,9 @@ volume_db = 20.0
 [connection signal="pressed" from="TabContainer/3/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="value_changed" from="TabContainer/3/HBoxContainer/Graphics/FPS/FPS/SpinBox" to="." method="_setting_changed"]
 [connection signal="toggled" from="TabContainer/3/HBoxContainer/Graphics/ShowFPS/CheckButton" to="." method="_setting_changed"]
+[connection signal="toggled" from="TabContainer/3/HBoxContainer/Graphics/TAA/CheckButton" to="." method="_setting_changed"]
+[connection signal="toggled" from="TabContainer/3/HBoxContainer/Graphics/FXAA/CheckButton" to="." method="_setting_changed"]
+[connection signal="toggled" from="TabContainer/3/HBoxContainer/Graphics/VSync/CheckButton" to="." method="_setting_changed"]
 [connection signal="item_selected" from="TabContainer/3/HBoxContainer/Graphics/AA/OptionButton" to="." method="_setting_changed"]
 [connection signal="item_selected" from="TabContainer/3/HBoxContainer/Graphics/Shadows/OptionButton" to="." method="_setting_changed"]
 [connection signal="toggled" from="TabContainer/3/HBoxContainer/Display/FullScreen/CheckButton" to="." method="_setting_changed"]
