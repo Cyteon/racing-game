@@ -1,10 +1,11 @@
-[gd_scene load_steps=121 format=4 uid="uid://b6008arpnia0n"]
+[gd_scene load_steps=122 format=4 uid="uid://b6008arpnia0n"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_buevl"]
 [ext_resource type="PackedScene" uid="uid://vs77sivxj54x" path="res://scenes/car.tscn" id="2_3ex8e"]
 [ext_resource type="Texture2D" uid="uid://daijbawfpqdu0" path="res://assets/world/starry_night_sky_dome_2k.hdr" id="3_5xwm8"]
 [ext_resource type="PackedScene" uid="uid://c538ntn2nevhb" path="res://scenes/reusables/TrackCanvas.tscn" id="5_rfmga"]
 [ext_resource type="Texture2D" uid="uid://dmhtwg3qy3qxf" path="res://assets/parts/billboard_tankcoBanner.png" id="5_wff4e"]
+[ext_resource type="PackedScene" uid="uid://durxrm6bitnns" path="res://scenes/reusables/track_creator.tscn" id="6_7f8gs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky3fn"]
 resource_name = "grass"
@@ -1781,6 +1782,7 @@ script = ExtResource("1_buevl")
 TRACK_ID = "night"
 
 [node name="Track" type="Node3D" parent="."]
+visible = false
 
 [node name="roadStraightLong" type="MeshInstance3D" parent="Track"]
 transform = Transform3D(1.19249e-07, 0, 10, 0, 10, 0, -10, 0, 1.19249e-07, 0, 0, 4.95938)
@@ -3348,5 +3350,10 @@ use_collision = true
 mesh = SubResource("PlaneMesh_uhht0")
 material = SubResource("StandardMaterial3D_3bcw1")
 
+[node name="TrackCreator" parent="." instance=ExtResource("6_7f8gs")]
+items = Array[PackedScene]([])
+end_rotation_offset = Vector3(0, 0, 0)
+
 [connection signal="body_entered" from="Track/roadEndGoal/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="TrackCreator" to="." method="_on_track_creator_body_entered"]
