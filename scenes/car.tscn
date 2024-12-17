@@ -202,11 +202,11 @@ shadow_mesh = SubResource("ArrayMesh_6elc1")
 
 [node name="Car" type="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0444, 0.660367, 0)
-mass = 300.0
+mass = 400.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.26, 0)
 script = ExtResource("1_kulqu")
-ENGINE_POWER = 1200
+ENGINE_POWER = 1400
 
 [node name="Car" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.135211, 0, 0, 0, 0.135211, 0, 0, 0, 0.135211, -0.0590311, 0.448176, -0.0133219)

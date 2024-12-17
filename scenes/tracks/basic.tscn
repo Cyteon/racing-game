@@ -2240,6 +2240,7 @@ mesh = SubResource("PlaneMesh_ffllh")
 material = SubResource("StandardMaterial3D_la8ld")
 
 [node name="TrackCreator" parent="." instance=ExtResource("6_4ylbr")]
+end_offset = Vector3(4, 0, 0)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="TrackCreator" to="." method="_on_track_creator_body_entered"]

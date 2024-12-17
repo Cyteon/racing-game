@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 			tween.tween_property($AudioStreamPlayer3D, "volume_db", -10, .5)
 			
 	
-	steering = move_toward(steering, Input.get_axis("right", "left") * MAX_STEER, delta * 10)
+	steering = move_toward(steering, Input.get_axis("right", "left") * MAX_STEER, delta * 2.5)
 	
 	if steering == 0:
 		var dir = -1 if angular_velocity.y > 0 else 1
