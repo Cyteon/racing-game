@@ -32,7 +32,7 @@ func load_settings() -> void:
 	var err = config.load("user://settings.cfg")
 	
 	if err != OK:
-		return
+		print_debug("Could not load config")
 	
 	# Graphics
 	
